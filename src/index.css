@@ -1,0 +1,72 @@
+@import "prismjs-material-theme/css/oceanic";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :target {
+    outline: none;
+  }
+}
+
+@layer components {
+  .container {
+    --content: 45rem;
+    --content-wide: 60rem;
+    --gutter: 1rem;
+    display: grid;
+
+    --side: minmax(0, calc(50% - var(--content-wide) / 2));
+
+    grid:
+      auto / var(--gutter) var(--side) 1fr minmax(0, var(--content)) 1fr var(
+        --side
+      )
+      var(--gutter);
+  }
+
+  .container > .content-screen {
+    grid-column: 1 / -1;
+  }
+  .container > .content-full {
+    grid-column: 2 / -2;
+  }
+  .container > .content-wide {
+    grid-column: 3 / -3;
+  }
+  .container > * {
+    grid-column: 4 / -4;
+  }
+}
+
+.markdown-body {
+  @apply prose max-w-none pt-16 pb-32;
+}
+
+.markdown-body img {
+  @apply rounded-md;
+}
+
+.text-lead {
+  @apply text-2xl leading-relaxed font-light;
+}
+
+.header-anchor {
+  @apply !no-underline opacity-40 focus:outline-none focus:text-brand-green focus:opacity-100 hover:text-brand-green hover:opacity-100;
+}
+
+.external-link::after {
+  @apply text-lg inline-block bg-current text-gray-400;
+  width: 1em;
+  height: 1em;
+  content: "";
+  margin-left: 0.25ch;
+  clip-path: path(
+    "M14.25 14.25H3.75V3.75H9v-1.5H3.75c-.83 0-1.5.67-1.5 1.5v10.5c0 .82.67 1.5 1.5 1.5h10.5c.82 0 1.5-.68 1.5-1.5V9h-1.5v5.25Zm-3.75-12v1.5h2.7l-7.38 7.37 1.06 1.06 7.37-7.37V7.5h1.5V2.25H10.5Z"
+  );
+}
