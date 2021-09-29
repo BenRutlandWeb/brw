@@ -5,6 +5,7 @@
 </template>
 
 <script setup>
+import iconsUrl from "@/assets/icons.svg";
 import { computed } from "@vue/reactivity";
 
 const props = defineProps({
@@ -14,5 +15,5 @@ const props = defineProps({
   },
 });
 
-const url = computed(() => `/icons.svg#${props.icon}`);
+const url = computed(() => `${iconsUrl}#${props.icon}`);
 </script>
