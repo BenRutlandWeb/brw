@@ -4,8 +4,8 @@
   </Head>
 
   <div class="content-wide pt-16 pb-32">
-    <div class="prose mb-8">
-      <h1 class="text-4xl font-bold mb-8">Posts</h1>
+    <div class="max-w-prose mb-8">
+      <h1 class="text-4xl font-extrabold mb-8">Posts</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
         doloremque libero accusamus dolorum similique deserunt dolore fugiat

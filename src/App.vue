@@ -1,6 +1,7 @@
 <template>
-  <!--<InternationalWomensDayBanner />-->
+  <InternationalWomensDayBanner />
   <AutismAwarenessBanner />
+  <EarthDayBanner />
   <Header>
     <div class="flex items-center justify-between gap-4 md:gap-6">
       <div class="flex items-center gap-4 text-xl">
@@ -12,16 +13,19 @@
           <li class="">
             <MenuLink :to="{ name: 'index' }">
               <Icon icon="home" />
+              <span class="sr-only">Home</span>
             </MenuLink>
           </li>
           <li class="">
             <MenuLink :to="{ name: 'posts' }">
               <Icon icon="notes" />
+              <span class="sr-only">Posts</span>
             </MenuLink>
           </li>
           <li class="">
             <MenuLink :to="{ name: 'bookmarks' }">
               <Icon icon="bookmark" />
+              <span class="sr-only">Bookmarks</span>
             </MenuLink>
           </li>
         </ul>

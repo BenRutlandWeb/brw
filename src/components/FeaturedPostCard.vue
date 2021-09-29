@@ -6,12 +6,12 @@
     <img
       :src="post.meta.thumbnail"
       :alt="post.meta.name"
-      class="w-full h-64 block object-cover rounded-lg"
+      class="w-full block object-cover rounded-lg aspect-w-3 aspect-h-2"
       :class="dir !== 'ltr' ? 'md:col-start-2' : ''"
     />
     <div class="mb-8">
       <PostMeta :post="post" />
-      <h2 class="text-4xl mt-2">{{ post.meta.name }}</h2>
+      <h3 class="text-4xl mt-2">{{ post.meta.name }}</h3>
       <p class="text-xl mt-2">{{ post.meta.description }}</p>
     </div>
   </RouterLink>

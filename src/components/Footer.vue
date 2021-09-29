@@ -29,60 +29,53 @@
           "
         >
           <li>
-            <SocialLink
-              href="https://benrutlandweb.co.uk"
-              label="WordPress site"
-              icon="wordpress"
-              color="#21759b"
-            />
+            <SocialLink href="https://benrutlandweb.co.uk">
+              <div class="sr-only">WordPress site</div>
+              <Icon icon="wordpress" />
+            </SocialLink>
           </li>
           <li>
-            <SocialLink
-              href="https://github.com/BenRutlandWeb"
-              label="Github profile"
-              icon="github"
-              color="#333"
-            />
+            <SocialLink href="https://github.com/BenRutlandWeb">
+              <div class="sr-only">Github profile</div>
+              <Icon icon="github" />
+            </SocialLink>
           </li>
           <li>
-            <SocialLink
-              href="https://www.facebook.com/benrutlandweb"
-              label="Facebook profile"
-              icon="facebook"
-              color="#1877f2"
-            />
+            <SocialLink href="https://www.facebook.com/benrutlandweb">
+              <div class="sr-only">Facebook profile</div>
+              <Icon icon="facebook" />
+            </SocialLink>
           </li>
           <li>
-            <SocialLink
-              href="https://twitter.com/BenRutlandWeb"
-              label="Twitter profile"
-              icon="twitter"
-              color="#1da1f2"
-            />
+            <SocialLink href="https://twitter.com/BenRutlandWeb">
+              <div class="sr-only">Twitter profile</div>
+              <Icon icon="twitter" />
+            </SocialLink>
           </li>
           <li>
-            <SocialLink
-              href="https://www.instagram.com/BenRutlandWeb"
-              label="Instagram profile"
-              icon="instagram"
-              color="#e1306c"
-            />
+            <SocialLink href="https://www.instagram.com/BenRutlandWeb">
+              <div class="sr-only">Instagram profile</div>
+              <Icon icon="instagram" />
+            </SocialLink>
           </li>
           <li>
-            <SocialLink
-              href="https://www.linkedin.com/in/benrutlandweb/"
-              label="LinkedIn profile"
-              icon="linkedin"
-              color="#0077b5"
-            />
+            <SocialLink href="https://www.linkedin.com/in/benrutlandweb/">
+              <div class="sr-only">LinkedIn profile</div>
+              <Icon icon="linkedin" />
+            </SocialLink>
           </li>
         </ul>
       </nav>
-      <ToTop />
+      <IconButton
+        is="a"
+        href="#top"
+        class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+      >
+        <Icon icon="arrow_upward" />
+      </IconButton>
     </div>
   </footer>
 </template>
-
 
 <style scoped>
 footer {

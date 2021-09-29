@@ -1,9 +1,8 @@
 <template>
   <aside
+    v-if="isInternationalWomensDay"
     class="
-      banner
       container
-      international-womens-day
       py-4
       bg-gradient-to-br
       from-international-womens-day-dark
@@ -40,8 +39,16 @@
   </aside>
 </template>
 
+
+<script setup>
+import { isSame } from "@/helpers/time";
+import { computed } from "@vue/reactivity";
+
+const isInternationalWomensDay = computed(() => isSame(undefined, 3, 8));
+</script>
+
 <style scoped>
-.banner {
+aside {
   grid-area: banner;
 }
 </style>

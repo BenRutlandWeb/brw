@@ -4,8 +4,8 @@
   </Head>
 
   <div class="content-wide my-16">
-    <h1 class="text-4xl font-medium mb-2">Welcome to Ben Rutland Web</h1>
-    <div class="prose">
+    <h1 class="text-4xl font-medium mb-4">Welcome to Ben Rutland Web</h1>
+    <div class="max-w-prose">
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic nihil
         natus, veritatis quisquam dignissimos ex itaque inventore veniam quae
@@ -28,32 +28,15 @@
         "
       >
         <h2 class="text-4xl">Featured posts</h2>
-        <RouterLink
+
+        <Button
+          is="RouterLink"
           :to="{ name: 'posts' }"
-          class="
-            inline-flex
-            items-center
-            gap-3
-            transition
-            relative
-            z-0
-            text-center
-            rounded
-            py-2
-            px-4
-            border-2
-            font-mono font-medium
-            focus:outline-none
-            focus:ring-6
-            hover:ring-6
-            bg-brand-green
-            ring-brand-green ring-opacity-40
-            border-brand-green
-          "
+          class="bg-brand-green ring-brand-green text-brand-blue"
         >
           <DoubleSlash />
           View all posts
-        </RouterLink>
+        </Button>
       </div>
     </div>
 
@@ -81,21 +64,29 @@
 
   <div class="content-wide mb-8">
     <h2 class="text-4xl mb-2">Radiate framework</h2>
-    <div class="prose">
+    <div class="max-w-prose">
       <p>
         Here is a selection of posts about Radiate, a PHP framework I created to
         make WordPress themes and plugins development a joy. Heavily inspired by
         Laravel, it uses WordPress core functionality underneath elegant OOP
         classes.
       </p>
+      <Button
+        is="RouterLink"
+        :to="{ name: 'tags-tag', params: { tag: 'radiate' } }"
+        class="
+          !no-underline
+          bg-radiate-black
+          ring-radiate-black
+          text-radiate-yellow
+          mt-4
+        "
+      >
+        <DoubleSlash />
+        View all
+      </Button>
     </div>
   </div>
-
-  <!--<FeaturedPostCard
-    :post="$router.resolve({ name: 'posts-getting-started-with-radiate' })"
-    class="mb-16 content-wide"
-    dir="rtl"
-  />-->
 
   <ul class="mb-32 content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
     <li>

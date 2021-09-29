@@ -28,6 +28,10 @@ module.exports = {
           dark: "#132a61",
           light: "#2c52af",
         },
+        "earth-day": {
+          dark: "#1c6445",
+          light: "#33c786",
+        },
       },
       fontFamily: {
         sans: ["Hind Vadodara", "sans-serif"],
@@ -63,5 +67,8 @@ module.exports = {
   corePlugins: {
     container: false,
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("./tailwindcss/aspect-ratio"),
+  ],
 };

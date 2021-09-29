@@ -12,6 +12,18 @@ function diff(a, b = Date.now(), c = ONE_SECOND) {
   return Math.floor(Math.abs(a - b) / c);
 }
 
+function isSame(year = undefined, month = undefined, day = undefined) {
+  const today = new Date();
+
+  year = year ?? today.getFullYear();
+  month = month ?? today.getMonth() + 1;
+  day = day ?? today.getDate();
+
+  const match = new Date(year, month - 1, day);
+
+  return today.setHours(0, 0, 0, 0) === match.setHours(0, 0, 0, 0);
+}
+
 function pluralizeHumanDiff(c, s, p) {
   return `${c} ${_n(s, p, c)}`;
 }
@@ -52,4 +64,4 @@ function humanDiff(a, b = Date.now()) {
   return pluralizeHumanDiff(seconds, "second", "seconds");
 }
 
-export { diff, humanDiff };
+export { diff, humanDiff, isSame };

@@ -1,34 +1,10 @@
 <template>
-  <a
+  <IconButton
+    is="a"
     target="_blank"
     rel="external nofollow noreferrer noopener"
-    class="
-      text-gray-500
-      leading-3
-      block
-      p-1
-      transition
-      rounded-full
-      focus:outline-none
-      focus:bg-gray-500 focus:bg-opacity-10
-    "
+    class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
   >
-    <div class="sr-only">{{ label }}</div>
-    <Icon :icon="icon" />
-  </a>
+    <slot />
+  </IconButton>
 </template>
-
-<script setup>
-const props = defineProps({
-  icon: String,
-  label: String,
-  color: String,
-});
-</script>
-
-<style>
-a:focus,
-a:hover {
-  color: v-bind(color);
-}
-</style>
