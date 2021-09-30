@@ -14,7 +14,7 @@ import container from "markdown-it-container";
 import externalLinks from "markdown-it-external-links";
 
 export default defineConfig({
-  base: "/brw/",
+  base: "/staging/7916/",
   resolve: {
     alias: [
       {
@@ -25,7 +25,7 @@ export default defineConfig({
   },
   server: {
     fs: {
-      allow: [".."],
+      allow: ["."],
     },
   },
   plugins: [

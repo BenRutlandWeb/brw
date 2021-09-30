@@ -2,7 +2,7 @@
 name: Autocomplete attribute
 title: Autocomplete attribute // Ben Rutland Web
 description: Save time for your users by providing the autocomplete attribute to your form elements.
-thumbnail: /img/login-form.png
+thumbnail: /@fs/img/login-form.png
 tags: ["html"]
 layout: post
 ---
