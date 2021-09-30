@@ -1,7 +1,4 @@
 <template>
-  <InternationalWomensDayBanner />
-  <AutismAwarenessBanner />
-  <EarthDayBanner />
   <Header>
     <div class="flex items-center justify-between gap-4 md:gap-6">
       <div class="flex items-center gap-4 text-xl">
