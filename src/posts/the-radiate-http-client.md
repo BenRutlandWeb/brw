@@ -2,7 +2,7 @@
 name: The Radiate HTTP client
 title: The Radiate HTTP client // Ben Rutland Web
 description:
-thumbnail: /img/radiate-http-client.png
+thumbnail: /brw/img/radiate-http-client.png
 tags: ["radiate", "wordpress", "php", "http"]
 layout: post
 ---

@@ -2,7 +2,7 @@
 name: Enhanced WordPress REST Requests and Responses
 title: Enhanced WordPress REST Requests and Responses // Ben Rutland Web
 description: How to extend WordPress Request and Response objects
-thumbnail: /img/wp-rest-api.png
+thumbnail: /brw/img/wp-rest-api.png
 tags: ["php", "wordpress"]
 layout: post
 ---
