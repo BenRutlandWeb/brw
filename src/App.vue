@@ -6,7 +6,7 @@
         <span class="whitespace-nowrap">Ben Rutland Web</span>
       </div>
       <nav class="">
-        <ul class="flex items-center gap-4 font-mono text-lg md:text-xl">
+        <ul class="flex items-center gap-1 font-mono text-lg md:text-xl">
           <li class="">
             <MenuLink :to="{ name: 'index' }">
               <Icon icon="home" />

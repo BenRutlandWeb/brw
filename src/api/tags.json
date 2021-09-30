@@ -52,7 +52,8 @@
   {
     "name": "Laravel",
     "path": "laravel",
-    "regex": "laravel"
+    "regex": "laravel",
+    "description": "In addition to WordPress, I often develop with Laravel. The PHP framework's code style influenced me to make the Radiate plugin/theme framework."
   },
   {
     "name": "MYSQL",
@@ -112,6 +113,7 @@
   {
     "name": "WordPress",
     "path": "wordpress",
-    "regex": "wordpress|wp"
+    "regex": "wordpress|wp",
+    "description": "Like much of the internet, WordPress rules dominant in my web development. Aside from my work, I develop the WordPress plugin/theme framework Radiate."
   }
 ]

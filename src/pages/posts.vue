@@ -6,11 +6,10 @@
   <div class="content-wide pt-16 pb-32">
     <div class="max-w-prose mb-8">
       <h1 class="text-4xl font-extrabold mb-8">Posts</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-        doloremque libero accusamus dolorum similique deserunt dolore fugiat
-        quos explicabo tenetur cum tempore exercitationem, ex illo quas nam ut
-        vitae! Hic?
+      <p class="text-lead">
+        I'm not very good at writing blog posts so this page may be blank for a
+        very long time... Or I may get the buzz for it and need to implement
+        pagination.
       </p>
     </div>
 

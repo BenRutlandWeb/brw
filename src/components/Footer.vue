@@ -4,24 +4,23 @@
       class="
         content-wide
         flex flex-wrap
-        items-center
+        items-end
         justify-between
         gap-y-4 gap-x-12
       "
     >
-      <div class="flex flex-1 items-center gap-4 text-lg">
-        <DoubleSlash class="opacity-40" />
+      <div class="flex flex-wrap flex-1 items-center gap-4 text-lg">
         <span class="whitespace-nowrap"
           >{{ new Date().getFullYear() }} &copy; Ben Rutland Web</span
         >
-      </div>
-      <nav class="">
+        <DoubleSlash class="opacity-40" />
+
         <ul
           class="
             flex
             items-center
             justify-between
-            gap-4
+            gap-1
             font-mono
             text-lg
             md:text-xl
@@ -29,9 +28,9 @@
           "
         >
           <li>
-            <SocialLink href="https://benrutlandweb.co.uk">
-              <div class="sr-only">WordPress site</div>
-              <Icon icon="wordpress" />
+            <SocialLink href="https://codepen.io/BenRutlandWeb">
+              <div class="sr-only">CodePen site</div>
+              <Icon icon="codepen" />
             </SocialLink>
           </li>
           <li>
@@ -40,32 +39,33 @@
               <Icon icon="github" />
             </SocialLink>
           </li>
-          <li>
+          <!--<li>
             <SocialLink href="https://www.facebook.com/benrutlandweb">
               <div class="sr-only">Facebook profile</div>
               <Icon icon="facebook" />
             </SocialLink>
-          </li>
+          </li>-->
           <li>
             <SocialLink href="https://twitter.com/BenRutlandWeb">
               <div class="sr-only">Twitter profile</div>
               <Icon icon="twitter" />
             </SocialLink>
           </li>
-          <li>
+          <!--<li>
             <SocialLink href="https://www.instagram.com/BenRutlandWeb">
               <div class="sr-only">Instagram profile</div>
               <Icon icon="instagram" />
             </SocialLink>
-          </li>
-          <li>
+          </li>-->
+          <!--<li>
             <SocialLink href="https://www.linkedin.com/in/benrutlandweb/">
               <div class="sr-only">LinkedIn profile</div>
               <Icon icon="linkedin" />
             </SocialLink>
-          </li>
+          </li>-->
         </ul>
-      </nav>
+      </div>
+
       <IconButton
         is="a"
         href="#top"

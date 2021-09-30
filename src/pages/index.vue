@@ -3,10 +3,14 @@
     <title>Ben Rutland Web</title>
   </Head>
 
-  <div class="content-wide my-16">
-    <h1 class="text-4xl font-medium mb-4">Welcome to Ben Rutland Web</h1>
-    <div class="max-w-prose">
-      <p>
+  <div class="content-wide py-16">
+    <div class="max-w-prose mb-8">
+      <h1 class="text-4xl font-extrabold mb-8">Welcome to Ben Rutland Web</h1>
+      <p class="text-lead mb-4">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic nihil
+        natus, veritatis quisquam dignissimos ex itaque inventore veniam quae.
+      </p>
+      <p class="">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic nihil
         natus, veritatis quisquam dignissimos ex itaque inventore veniam quae
         voluptatibus nulla. Eum quae et aliquam quos voluptatibus at, quas

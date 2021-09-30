@@ -1,8 +1,12 @@
 <template>
-  <div class="content-wide">
-    <div class="markdown-body">
-      <h1>{{ selectedTag.name }}</h1>
+  <div class="content-wide pt-16 pb-32">
+    <div class="max-w-prose mb-8">
+      <h1 class="text-4xl font-extrabold mb-8">{{ selectedTag.name }}</h1>
+      <p v-if="selectedTag.description" class="text-lead">
+        {{ selectedTag.description }}
+      </p>
     </div>
+
     <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8">
       <li v-for="post in posts" :key="post.path">
         <PostCard :post="post" />

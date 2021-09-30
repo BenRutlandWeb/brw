@@ -7,7 +7,7 @@
       leading-3
       p-2
       focus:outline-none
-      focus-visible:ring-6
+      focus-visible:ring-2
       transition
       ring-opacity-40
       focus:z-10
