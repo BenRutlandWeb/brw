@@ -7,14 +7,18 @@
     <div class="max-w-prose mb-8">
       <h1 class="text-4xl font-extrabold mb-8">Welcome to Ben Rutland Web</h1>
       <p class="text-lead mb-4">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic nihil
-        natus, veritatis quisquam dignissimos ex itaque inventore veniam quae.
+        <mark>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic nihil
+          natus, veritatis quisquam dignissimos ex itaque inventore veniam quae.
+        </mark>
       </p>
       <p class="">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic nihil
-        natus, veritatis quisquam dignissimos ex itaque inventore veniam quae
-        voluptatibus nulla. Eum quae et aliquam quos voluptatibus at, quas
-        quisquam!
+        <mark>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic nihil
+          natus, veritatis quisquam dignissimos ex itaque inventore veniam quae
+          voluptatibus nulla. Eum quae et aliquam quos voluptatibus at, quas
+          quisquam!
+        </mark>
       </p>
     </div>
   </div>
@@ -32,6 +36,10 @@
         "
       >
         <h2 class="text-4xl">Featured posts</h2>
+
+        <p>
+          <mark>Write a post to justify this section</mark>
+        </p>
 
         <Button
           is="RouterLink"
@@ -71,7 +79,7 @@
     <div class="max-w-prose">
       <p>
         Here is a selection of posts about Radiate, a PHP framework I created to
-        make WordPress themes and plugins development a joy. Heavily inspired by
+        make WordPress theme and plugin development a joy. Heavily inspired by
         Laravel, it uses WordPress core functionality underneath elegant OOP
         classes.
       </p>
@@ -91,6 +99,13 @@
       </Button>
     </div>
   </div>
+
+  <p>
+    <mark
+      >write a good intro to radiate post, then remove the others until they are
+      better written with a point to them</mark
+    >
+  </p>
 
   <ul class="mb-32 content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
     <li>

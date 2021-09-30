@@ -4,68 +4,67 @@
       class="
         content-wide
         flex flex-wrap
-        items-end
+        items-center
         justify-between
-        gap-y-4 gap-x-12
+        gap-y-4 gap-x-6
       "
     >
-      <div class="flex flex-wrap flex-1 items-center gap-4 text-lg">
+      <div class="flex flex-1 items-center gap-4 text-lg">
+        <DoubleSlash class="opacity-40" />
         <span class="whitespace-nowrap"
           >{{ new Date().getFullYear() }} &copy; Ben Rutland Web</span
         >
-        <DoubleSlash class="opacity-40" />
+      </div>
 
-        <ul
-          class="
-            flex
-            items-center
-            justify-between
-            gap-1
-            font-mono
-            text-lg
-            md:text-xl
-            text-gray-500
-          "
-        >
-          <li>
-            <SocialLink href="https://codepen.io/BenRutlandWeb">
-              <div class="sr-only">CodePen site</div>
-              <Icon icon="codepen" />
-            </SocialLink>
-          </li>
-          <li>
-            <SocialLink href="https://github.com/BenRutlandWeb">
-              <div class="sr-only">Github profile</div>
-              <Icon icon="github" />
-            </SocialLink>
-          </li>
-          <!--<li>
+      <ul
+        class="
+          flex
+          items-center
+          justify-between
+          gap-1
+          font-mono
+          text-lg
+          md:text-xl
+          text-gray-500
+        "
+      >
+        <li>
+          <SocialLink href="https://codepen.io/BenRutlandWeb">
+            <div class="sr-only">CodePen site</div>
+            <Icon icon="codepen" />
+          </SocialLink>
+        </li>
+        <li>
+          <SocialLink href="https://github.com/BenRutlandWeb">
+            <div class="sr-only">Github profile</div>
+            <Icon icon="github" />
+          </SocialLink>
+        </li>
+        <!--<li>
             <SocialLink href="https://www.facebook.com/benrutlandweb">
               <div class="sr-only">Facebook profile</div>
               <Icon icon="facebook" />
             </SocialLink>
           </li>-->
-          <li>
-            <SocialLink href="https://twitter.com/BenRutlandWeb">
-              <div class="sr-only">Twitter profile</div>
-              <Icon icon="twitter" />
-            </SocialLink>
-          </li>
-          <!--<li>
+        <li>
+          <SocialLink href="https://twitter.com/BenRutlandWeb">
+            <div class="sr-only">Twitter profile</div>
+            <Icon icon="twitter" />
+          </SocialLink>
+        </li>
+        <!--<li>
             <SocialLink href="https://www.instagram.com/BenRutlandWeb">
               <div class="sr-only">Instagram profile</div>
               <Icon icon="instagram" />
             </SocialLink>
           </li>-->
-          <!--<li>
+        <!--<li>
             <SocialLink href="https://www.linkedin.com/in/benrutlandweb/">
               <div class="sr-only">LinkedIn profile</div>
               <Icon icon="linkedin" />
             </SocialLink>
           </li>-->
-        </ul>
-      </div>
-
+      </ul>
       <IconButton
         is="a"
         href="#top"

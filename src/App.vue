@@ -1,10 +1,13 @@
 <template>
   <Header>
     <div class="flex items-center justify-between gap-4 md:gap-6">
-      <div class="flex items-center gap-4 text-xl">
+      <RouterLink
+        :to="{ name: 'index' }"
+        class="flex items-center gap-4 text-xl"
+      >
         <DoubleSlash class="opacity-40" />
         <span class="whitespace-nowrap">Ben Rutland Web</span>
-      </div>
+      </RouterLink>
       <nav class="">
         <ul class="flex items-center gap-1 font-mono text-lg md:text-xl">
           <li class="">
