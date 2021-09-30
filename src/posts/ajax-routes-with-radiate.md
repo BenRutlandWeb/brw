@@ -2,7 +2,7 @@
 name: AJAX routes with Radiate
 title: AJAX routes with Radiate // Ben Rutland Web
 description: A quick guide to getting started with Radiate - a WordPress plugin and theme framework inspired by Laravel.
-thumbnail: /brw/img/radiate-ajax.png
+thumbnail: /img/radiate-ajax.png
 tags: ["radiate", "php", "wordpress"]
 layout: post
 ---

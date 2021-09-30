@@ -2,7 +2,7 @@
 name: Autism awareness day
 title: Autism awareness day // Ben Rutland Web
 description: Help create a society that works for autistic people.
-thumbnail: /brw/img/autism-awareness-day.png
+thumbnail: /img/autism-awareness-day.png
 layout: post
 ---
 
