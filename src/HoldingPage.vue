@@ -16,7 +16,9 @@
                 <h1 class="text-4xl font-extrabold mb-8">
                     Welcome to Ben Rutland Web
                 </h1>
-                <p class="text-lead mb-4">This site is under construction.</p>
+                <p class="text-lead mb-4">
+                    This site is under construction. Please come back soon!
+                </p>
             </div>
         </div>
     </Main>
