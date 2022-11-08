@@ -62,8 +62,116 @@ Route::get('hogwarts/sort', function () {
 
 Now go to the WordPress API endpoint `/wp-json/hp/hogwarts/sort`. You should see the response as a random house!
 
+### Controllers
+
 Instead of a `Closure`, we can use a dedicated `Controller` class. Using `wp-cli` we can use the Radiate command `make:controller`:
 
 ```bash
 wp radiate make:controller HogwartsHouseController
+```
+
+This will create a controller located in `app/Http/Controllers`. We'll move the sorting logic into a method called `sort`. You can name the method as you please, but we'll keep it simple for the purposes of this example.
+
+```php
+<?php
+
+namespace Plugin\Http\Controllers;
+
+use Radiate\Routing\Controller;
+
+class HogwartsHouseController extends Controller
+{
+    /**
+     * Sort the user into a house.
+     *
+     * @return string
+     */
+    public function sort()
+    {
+        return collect(
+            ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
+        )->random();
+    }
+}
+
+```
+
+Next, update the `routes/api.php` file to point the route to the newly created controller. Notice the second argument takes an array with the controller name and method name.
+
+```php
+<?php
+
+use Plugin\Http\Controllers\HogwartsHouseController;
+use Radiate\Support\Facades\Route;
+
+Route::get('hogwarts/sort', [HogwartsHouseController::class, 'sort']);
+
+```
+
+The above code is great, but every time the endpoint is requested, a different house will be returned. Not very magical! Lets use the `Request` object combined with the `Option` facade to help us return the same house once a user is sorted.
+
+```php
+<?php
+
+namespace Plugin\Http\Controllers;
+
+use Radiate\Http\Request;
+use Radiate\Routing\Controller;
+use Radiate\Support\Facades\Option;
+use Radiate\Support\Str;
+
+class HogwartsHouseController extends Controller
+{
+    /**
+     * Sort the user into a house.
+     *
+     * @param \Radiate\Http\Request $request
+     * @return string
+     */
+    public function sort(Request $request)
+    {
+        $name = Str::snake('hp_' . $request->get('name'));
+
+        if (Option::has($name)) {
+            return Option::get($name);
+        }
+
+        $house = collect(
+            ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
+        )->random();
+
+        Option::set($name, $house);
+
+        return $house;
+    }
+}
+
+```
+
+Here we are taking the value of "name" and using it as a key to store in the options table. Whenever the same name is passed to the request, the same house will be returned. There is one more thing we can do here to utilize the power of Radiate. Let's validate the input and bail early if the "name" field is not valid.
+
+```php
+<?php
+
+public function sort(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string',
+    ]);
+
+    $name = Str::snake('hp_' . $request->get('name'));
+
+    if (Option::has($name)) {
+        return Option::get($name);
+    }
+
+    $house = collect(
+        ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
+    )->random();
+
+    Option::set($name, $house);
+
+    return $house;
+}
+
 ```

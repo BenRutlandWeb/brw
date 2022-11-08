@@ -34,7 +34,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Hind Vadodara", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
         mono: ["Roboto Mono", "monospace"],
       },
       ringWidth: {

@@ -37,10 +37,6 @@
       >
         <h2 class="text-4xl">Featured posts</h2>
 
-        <p>
-          <mark>Write a post to justify this section</mark>
-        </p>
-
         <Button
           is="RouterLink"
           :to="{ name: 'posts' }"

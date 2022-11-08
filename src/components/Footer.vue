@@ -29,6 +29,12 @@
         "
       >
         <li>
+          <SocialLink href="https://radiate-framework.github.io/">
+            <div class="sr-only">Radiate documentation site</div>
+            <Icon icon="radiate" />
+          </SocialLink>
+        </li>
+        <li>
           <SocialLink href="https://codepen.io/BenRutlandWeb">
             <div class="sr-only">CodePen site</div>
             <Icon icon="codepen" />
