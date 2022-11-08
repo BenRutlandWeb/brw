@@ -30,7 +30,6 @@ html {
     scroll-padding-block-start: calc(var(--header-height) + 1.5rem);
     scroll-behavior: smooth;
 }
-
 #app {
     min-height: 100vh;
     display: grid;
