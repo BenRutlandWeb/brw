@@ -22,7 +22,6 @@
             </div>
         </div>
     </Main>
-
     <Footer />
 </template>
 
