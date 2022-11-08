@@ -60,7 +60,7 @@
   @apply !no-underline opacity-40 focus:outline-none focus:text-brand-green focus:opacity-100 hover:text-brand-green hover:opacity-100;
 }
 
-.external-link::after {
+[rel*="external"]::after {
   @apply text-lg inline-block bg-current text-gray-400;
   width: 1em;
   height: 1em;

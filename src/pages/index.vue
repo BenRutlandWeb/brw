@@ -7,18 +7,27 @@
     <div class="max-w-prose mb-8">
       <h1 class="text-4xl font-extrabold mb-8">Welcome to Ben Rutland Web</h1>
       <p class="text-lead mb-4">
-        <mark>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic nihil
-          natus, veritatis quisquam dignissimos ex itaque inventore veniam quae.
-        </mark>
+        I'm a web developer for
+        <a
+          href="https://www.10degrees.uk/"
+          class="external-link"
+          target="_blank"
+          rel="nofollow noopener noreferrer external"
+          >10 Degrees</a
+        >, creator of the
+        <a
+          href="https://radiate-framework.github.io/"
+          class="external-link"
+          target="_blank"
+          rel="nofollow noopener noreferrer external"
+          >Radiate</a
+        >
+        framework, and I <i>try</i> to write interesting things about web
+        technologies, ideologies and more.
       </p>
       <p class="">
-        <mark>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic nihil
-          natus, veritatis quisquam dignissimos ex itaque inventore veniam quae
-          voluptatibus nulla. Eum quae et aliquam quos voluptatibus at, quas
-          quisquam!
-        </mark>
+        In addition to web development I do other stuff like drawing and making
+        music, some of which I will showcase on this site. Some of it I won't.
       </p>
     </div>
   </div>
@@ -70,58 +79,79 @@
     </ul>
   </div>
 
-  <div class="content-wide mb-8">
-    <h2 class="text-4xl mb-2">Radiate framework</h2>
-    <div class="max-w-prose">
-      <p>
-        Here is a selection of posts about Radiate, a PHP framework I created to
-        make WordPress theme and plugin development a joy. Heavily inspired by
-        Laravel, it uses WordPress core functionality underneath elegant OOP
-        classes.
-      </p>
-      <Button
-        is="RouterLink"
-        :to="{ name: 'tags-tag', params: { tag: 'radiate' } }"
+  <div class="content-screen container py-16 mb-32 gap-y-8">
+    <div class="border-b container content-screen">
+      <div
         class="
-          !no-underline
-          bg-radiate-black
-          ring-radiate-black
-          text-radiate-yellow
-          mt-4
+          content-wide
+          flex flex-wrap
+          gap-4
+          justify-between
+          items-center
+          pb-4
         "
       >
-        <DoubleSlash />
-        View all
-      </Button>
+        <h2 class="text-4xl">WordPress</h2>
+
+        <Button
+          is="RouterLink"
+          :to="{ name: 'tags-tag', params: { tag: 'wordpress' } }"
+          class="bg-brands-wordpress ring-brands-wordpress text-white"
+        >
+          <DoubleSlash />
+          View all WordPress posts
+        </Button>
+      </div>
     </div>
+
+    <ul class="content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <li>
+        <PostCard
+          :post="
+            $router.resolve({
+              name: 'posts-enhanced-wordpress-requests-and-responses',
+            })
+          "
+        />
+      </li>
+    </ul>
   </div>
 
-  <p>
-    <mark
-      >write a good intro to radiate post, then remove the others until they are
-      better written with a point to them</mark
-    >
-  </p>
+  <div class="content-screen container py-16 mb-32 gap-y-8">
+    <div class="border-b container content-screen">
+      <div
+        class="
+          content-wide
+          flex flex-wrap
+          gap-4
+          justify-between
+          items-center
+          pb-4
+        "
+      >
+        <h2 class="text-4xl">Laravel</h2>
 
-  <ul class="mb-32 content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-    <li>
-      <PostCard
-        :post="$router.resolve({ name: 'posts-getting-started-with-radiate' })"
-      />
-    </li>
-    <li>
-      <PostCard
-        :post="$router.resolve({ name: 'posts-the-radiate-http-client' })"
-      />
-    </li>
-    <li>
-      <PostCard
-        :post="$router.resolve({ name: 'posts-ajax-routes-with-radiate' })"
-      />
-    </li>
-  </ul>
+        <Button
+          is="RouterLink"
+          :to="{ name: 'tags-tag', params: { tag: 'laravel' } }"
+          class="bg-brands-laravel ring-brands-laravel text-white"
+        >
+          <DoubleSlash />
+          View all Laravel posts
+        </Button>
+      </div>
+    </div>
+
+    <ul class="content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <li>
+        <PostCard
+          :post="
+            $router.resolve({
+              name: 'posts-how-i-built-this-blog',
+            })
+          "
+        />
+      </li>
+    </ul>
+  </div>
 </template>
-
-<script setup>
-import { Head } from "@vueuse/head";
-</script>

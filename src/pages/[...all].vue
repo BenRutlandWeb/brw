@@ -59,7 +59,6 @@
 
 <script setup>
 import { ref } from "@vue/reactivity";
-import { Head } from "@vueuse/head";
 import { sample } from "lodash-es";
 
 const markdown = `HTTP/1.1 404 Not Found

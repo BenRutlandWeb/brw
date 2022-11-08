@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between gap-4 md:gap-6">
       <RouterLink
         :to="{ name: 'index' }"
-        class="flex items-center gap-4 text-xl"
+        class="flex items-center gap-4 text-xl h-10"
       >
         <DoubleSlash class="opacity-40" />
         <span class="whitespace-nowrap">Ben Rutland Web</span>

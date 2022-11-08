@@ -20,6 +20,10 @@ module.exports = {
           red: "#EA5455",
           black: "#2d4059",
         },
+        brands: {
+          laravel: "#f55247",
+          wordpress: "#21759b",
+        },
         "international-womens-day": {
           dark: "#54347b",
           light: "#d84cb5",

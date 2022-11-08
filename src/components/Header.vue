@@ -1,5 +1,5 @@
 <template>
-  <header class="container sticky top-0 bg-brand-blue text-white py-3 z-50">
+  <header class="container sticky top-0 bg-brand-blue text-white py-2 z-50">
     <div class="content-wide">
       <slot />
     </div>

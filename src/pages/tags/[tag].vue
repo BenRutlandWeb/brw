@@ -7,11 +7,15 @@
       </p>
     </div>
 
-    <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8">
+    <ul
+      class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8"
+      v-if="posts.length"
+    >
       <li v-for="post in posts" :key="post.path">
         <PostCard :post="post" />
       </li>
     </ul>
+    <p v-else>No posts found.</p>
   </div>
 </template>
 
