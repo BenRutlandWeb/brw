@@ -41,10 +41,10 @@
         <PostCard :post="$router.resolve({ name: 'posts-autocomplete-attribute' })" />
       </li>
       <li>
-        <PostCard :post="$router.resolve({ name: 'posts-how-i-built-this-blog' })" />
+        <PostCard :post="$router.resolve({ name: 'posts-enhanced-wordpress-requests-and-responses' })" />
       </li>
       <li>
-        <PostCard :post="$router.resolve({ name: 'posts-hello-world' })" />
+        <PostCard :post="$router.resolve({ name: 'posts-using-the-has-relationship-selector' })" />
       </li>
     </ul>
   </div>

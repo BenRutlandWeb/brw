@@ -2,7 +2,6 @@
 name: Using the :has() relational selector
 title: Using the :has() relational selector // Ben Rutland Web
 description: How to use the :has() relational selector to make a star-rating component
-thumbnail: /img/wp-rest-api.png
 tags: ["html", "css"]
 layout: post
 ---
