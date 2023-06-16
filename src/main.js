@@ -19,4 +19,4 @@ const router = createRouter({
 
 const head = createHead();
 
-createApp(HoldingPage).use(router).use(head).mount("#app");
+createApp(App).use(router).use(head).mount("#app");

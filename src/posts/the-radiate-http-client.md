@@ -15,7 +15,7 @@ Make API calls from your application with the Radiate `Http` facade.
 
 ![Radiate HTTP client code](/img/radiate-http-client.png)
 
-The Radiate HTTP client is an elegant wrapper around `wp_remote_request`, with useful methods t obuild the HTTP request, and returning a fluent response interface.
+The Radiate HTTP client is an elegant wrapper around `wp_remote_request`, with useful methods to build the HTTP request, and returning a fluent response interface.
 
 ```php
 <?php

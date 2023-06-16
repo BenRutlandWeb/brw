@@ -1,5 +1,6 @@
 <template>
   <div class="content-screen container">
+
     <Head>
       <title>Page not found // Ben Rutland Web</title>
     </Head>
@@ -10,43 +11,27 @@
         <p class="text-lead mb-4">
           The page you were looking for was not found.
         </p>
-        <Button
-          is="RouterLink"
-          :to="{ name: 'index' }"
-          class="bg-brand-green ring-brand-green text-brand-blue"
-        >
+        <Button is="RouterLink" :to="{ name: 'index' }" class="bg-brand-green ring-brand-green text-brand-blue">
           <DoubleSlash />
           Go home
         </Button>
       </div>
 
       <div class="flex justify-end gap-1 mb-2">
-        <IconButton
-          @click="choose(html)"
-          class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
-          :class="{ 'text-brand-green': message === html }"
-        >
+        <IconButton @click="choose(html)" class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+                    :class="{ 'text-brand-green': message === html }">
           <Icon icon="code" />
         </IconButton>
-        <IconButton
-          @click="choose(markdown)"
-          class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
-          :class="{ 'text-brand-green': message === markdown }"
-        >
+        <IconButton @click="choose(markdown)" class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+                    :class="{ 'text-brand-green': message === markdown }">
           <Icon icon="tag" />
         </IconButton>
-        <IconButton
-          @click="choose(json)"
-          class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
-          :class="{ 'text-brand-green': message === json }"
-        >
+        <IconButton @click="choose(json)" class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+                    :class="{ 'text-brand-green': message === json }">
           <Icon icon="data_object" />
         </IconButton>
-        <IconButton
-          @click="choose(javascript)"
-          class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
-          :class="{ 'text-brand-green': message === javascript }"
-        >
+        <IconButton @click="choose(javascript)" class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+                    :class="{ 'text-brand-green': message === javascript }">
           <Icon icon="data_array" />
         </IconButton>
       </div>
@@ -85,7 +70,20 @@ Content-Type: text/html; charset=UTF-8
 const json = `HTTP/1.1 404 Not Found
 Content-Type: application/json; charset=UTF-8
 
-{"error":{"status":404,"message":"Not found"},"content":{"title":"404: Page Not Found.","message":"The page you were looking for was not found.","action":{"url":"/","text":"Go home"}}}
+{
+  "error": {
+    "status": 404,
+    "message": "Not found"
+  },
+  "content": {
+    "title": "404: Page Not Found.",
+    "message": "The page you were looking for was not found.",
+    "action": {
+      "url": "/",
+      "text": "Go home"
+    }
+  }
+}
 `;
 
 const javascript = `HTTP/1.1 404 Not Found
