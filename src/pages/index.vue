@@ -32,19 +32,12 @@
     </div>
   </div>
 
-  <div class="content-screen container bg-gray-100 py-16 mb-32 gap-y-8">
+  <div class="content-screen container py-16 mb-32 gap-y-8">
     <div class="border-b container content-screen">
       <div
-        class="
-          content-wide
-          flex flex-wrap
-          gap-4
-          justify-between
-          items-center
-          pb-4
-        "
+        class="content-wide flex flex-wrap gap-4 justify-between items-center pb-4"
       >
-        <h2 class="text-4xl">Featured posts</h2>
+        <h2 class="text-4xl">Posts</h2>
 
         <Button
           is="RouterLink"
@@ -57,101 +50,30 @@
       </div>
     </div>
 
-    <FeaturedPostCard
-      :post="$router.resolve({ name: 'posts-autism-awareness-day' })"
-      class="content-wide"
-    />
-
     <ul class="content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <li>
-        <PostCard
-          :post="$router.resolve({ name: 'posts-autocomplete-attribute' })"
-        />
-      </li>
-      <li>
-        <PostCard
-          :post="$router.resolve({ name: 'posts-how-i-built-this-blog' })"
-        />
-      </li>
-      <li>
-        <PostCard :post="$router.resolve({ name: 'posts-hello-world' })" />
-      </li>
-    </ul>
-  </div>
-
-  <div class="content-screen container py-16 mb-32 gap-y-8">
-    <div class="border-b container content-screen">
-      <div
-        class="
-          content-wide
-          flex flex-wrap
-          gap-4
-          justify-between
-          items-center
-          pb-4
-        "
-      >
-        <h2 class="text-4xl">WordPress</h2>
-
-        <Button
-          is="RouterLink"
-          :to="{ name: 'tags-tag', params: { tag: 'wordpress' } }"
-          class="bg-brands-wordpress ring-brands-wordpress text-white"
-        >
-          <DoubleSlash />
-          View all WordPress posts
-        </Button>
-      </div>
-    </div>
-
-    <ul class="content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <li>
-        <PostCard
-          :post="
-            $router.resolve({
-              name: 'posts-enhanced-wordpress-requests-and-responses',
-            })
-          "
-        />
-      </li>
-    </ul>
-  </div>
-
-  <div class="content-screen container py-16 mb-32 gap-y-8">
-    <div class="border-b container content-screen">
-      <div
-        class="
-          content-wide
-          flex flex-wrap
-          gap-4
-          justify-between
-          items-center
-          pb-4
-        "
-      >
-        <h2 class="text-4xl">Laravel</h2>
-
-        <Button
-          is="RouterLink"
-          :to="{ name: 'tags-tag', params: { tag: 'laravel' } }"
-          class="bg-brands-laravel ring-brands-laravel text-white"
-        >
-          <DoubleSlash />
-          View all Laravel posts
-        </Button>
-      </div>
-    </div>
-
-    <ul class="content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <li>
-        <PostCard
-          :post="
-            $router.resolve({
-              name: 'posts-how-i-built-this-blog',
-            })
-          "
-        />
+      <li v-for="post in posts" :key="post.path">
+        <PostCard :post="post" />
       </li>
     </ul>
   </div>
 </template>
+
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const routes = router.getRoutes();
+
+const posts = routes
+  .filter(
+    (route) =>
+      Object.keys(route.meta).length !== 0 && route.path.includes("posts")
+  )
+  .sort(
+    (a, b) =>
+      new Date(b.meta.fileStats.birthtime) -
+      new Date(a.meta.fileStats.birthtime)
+  )
+  .slice(0, 3);
+</script>
