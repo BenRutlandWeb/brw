@@ -54,6 +54,16 @@ export default defineConfig({
             }
           },
         });
+        md.use(container, "note", {
+          render: (tokens, idx) => {
+            const token = tokens[idx];
+            if (token.nesting === 1) {
+              return `<div class="rounded p-4 bg-blue-400 [&>p]:m-0">\n`;
+            } else {
+              return `</div>\n`;
+            }
+          },
+        });
       },
       headEnabled: true,
     }),
