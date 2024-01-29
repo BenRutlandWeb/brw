@@ -1,20 +1,14 @@
 <template>
-  <footer class="bg-gray-100 container py-8 text-center">
-    <div
-      class="
-        content-wide
-        flex flex-wrap
-        items-center
-        justify-between
-        gap-y-4 gap-x-6
-      "
-    >
-      <div class="flex flex-1 items-center gap-4 text-lg">
-        <DoubleSlash class="opacity-40" />
-        <span class="whitespace-nowrap"
-          >{{ new Date().getFullYear() }} &copy; Ben Rutland Web</span
+    <footer class="bg-gray-100 container py-8 text-center">
+        <div
+            class="content-wide flex flex-wrap items-center justify-between gap-y-4 gap-x-6"
         >
-      </div>
+            <div class="flex flex-1 items-center gap-4 text-lg">
+                <DoubleSlash class="text-gray-300" />
+                <span class="whitespace-nowrap"
+                    >{{ new Date().getFullYear() }} &copy; Ben Rutland Web</span
+                >
+            </div>
 
       <ul
         class="
@@ -52,38 +46,38 @@
               <Icon icon="facebook" />
             </SocialLink>
           </li>-->
-        <li>
-          <SocialLink href="https://twitter.com/BenRutlandWeb">
-            <div class="sr-only">Twitter profile</div>
-            <Icon icon="twitter" />
-          </SocialLink>
-        </li>
-        <!--<li>
+                <li>
+                    <SocialLink href="https://twitter.com/BenRutlandWeb">
+                        <div class="sr-only">Twitter profile</div>
+                        <Icon icon="twitter" />
+                    </SocialLink>
+                </li>
+                <!--<li>
             <SocialLink href="https://www.instagram.com/BenRutlandWeb">
               <div class="sr-only">Instagram profile</div>
               <Icon icon="instagram" />
             </SocialLink>
           </li>-->
-        <!--<li>
+                <!--<li>
             <SocialLink href="https://www.linkedin.com/in/benrutlandweb/">
               <div class="sr-only">LinkedIn profile</div>
               <Icon icon="linkedin" />
             </SocialLink>
           </li>-->
-      </ul>
-      <IconButton
-        is="a"
-        href="#top"
-        class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
-      >
-        <Icon icon="arrow_upward" />
-      </IconButton>
-    </div>
-  </footer>
+            </ul>
+            <IconButton
+                is="a"
+                href="#top"
+                class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+            >
+                <Icon icon="arrow_upward" />
+            </IconButton>
+        </div>
+    </footer>
 </template>
 
 <style scoped>
 footer {
-  grid-area: footer;
+    grid-area: footer;
 }
 </style>

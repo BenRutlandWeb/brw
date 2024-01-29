@@ -74,3 +74,7 @@
 .dark .prose {
   @apply text-gray-300;
 }
+
+iframe {
+    @apply h-auto aspect-w-16 aspect-h-9;
+}

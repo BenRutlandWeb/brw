@@ -8,13 +8,13 @@
 
 <style>
 html {
-  --header-height: 3.5rem;
+    --header-height: 3.5rem;
 }
 </style>
 
 <style scoped>
 header {
-  grid-area: header;
-  font-size: 1.5rem;
+    grid-area: header;
+    font-size: 1.5rem;
 }
 </style>
