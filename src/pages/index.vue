@@ -7,14 +7,14 @@
         <div class="max-w-prose mb-8">
             <h1 class="text-4xl font-extrabold mb-8">Welcome to Ben Rutland Web</h1>
             <p class="text-lead mb-4">
-                I'm a web developer for
+                I'm a senior web developer formerly of
                 <a
                     href="https://www.10degrees.uk/"
                     class="external-link"
                     target="_blank"
                     rel="nofollow noopener noreferrer external"
                     >10 Degrees</a
-                >, creator of the
+                >, currently looking for work. I'm the creator of the
                 <a
                     href="https://radiate-framework.github.io/"
                     class="external-link"
@@ -22,11 +22,7 @@
                     rel="nofollow noopener noreferrer external"
                     >Radiate</a
                 >
-                framework, and I <i>try</i> to write interesting things about web technologies, ideologies and more.
-            </p>
-            <p class="">
-                In addition to web development I do other stuff like drawing and making music, some of which I will
-                showcase on this site. Some of it I won't.
+                framework, and I specialize in WordPress and Laravel PHP development, and front-end tech.
             </p>
         </div>
     </div>
