@@ -5,6 +5,7 @@ description: A guide to extending the WordPress WP_User class to streamline user
 thumbnail: /img/extend-the-wordpress-user-model.png
 tags: ["php", "wordpress"]
 layout: post
+createdAt: 2024-01-01T00:00:00Z
 ---
 
 # Extend the WordPress user model
@@ -41,9 +42,9 @@ class User extends WP_User
 
 The `WP_User` class has a few methods to interact with the user role:
 
-- `add_role` adds role to user
-- `remove_role` removes role from user
-- `set_role` sets the role of the user (replaces existing roles)
+-   `add_role` adds role to user
+-   `remove_role` removes role from user
+-   `set_role` sets the role of the user (replaces existing roles)
 
 I think we can do better. Let's check if the user has a role and get all roles.
 

@@ -4,6 +4,7 @@ title: Using the :has() relational selector // Ben Rutland Web
 description: How to use the :has() relational selector to make a star-rating component
 tags: ["html", "css"]
 layout: post
+createdAt: 2024-01-01T00:00:00Z
 ---
 
 # Using the `:has()` relational selector

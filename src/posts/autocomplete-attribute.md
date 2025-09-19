@@ -5,6 +5,7 @@ description: Save time for your users by providing the autocomplete attribute to
 thumbnail: /img/login-form.png
 tags: ["html"]
 layout: post
+createdAt: 2024-01-01T00:00:00Z
 ---
 
 # Autocomplete attribute
@@ -27,24 +28,13 @@ A login for is usually made up of an email and password. The `autocomplete` attr
 
 ```html
 <form method="POST">
-  <label for="email">Email</label>
-  <input
-    type="email"
-    name="email"
-    id="email"
-    autocomplete="email"
-    inputmode="email"
-  />
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" autocomplete="email" inputmode="email" />
 
-  <label for="password">Password</label>
-  <input
-    type="password"
-    name="password"
-    id="password"
-    autocomplete="current-password"
-  />
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" autocomplete="current-password" />
 
-  <button type="submit">Login</button>
+    <button type="submit">Login</button>
 </form>
 ```
 
@@ -53,8 +43,7 @@ A login for is usually made up of an email and password. The `autocomplete` attr
 You may need to use a `username` to authenticate users instead of an email address. It's as easy as it sounds.
 
 ```html
-<label for="username">Username</label>
-<input type="text" name="username" id="username" autocomplete="username" />
+<label for="username">Username</label> <input type="text" name="username" id="username" autocomplete="username" />
 ```
 
 ## Register form
@@ -63,27 +52,16 @@ A register form usually has the same input fields as a login page, with addition
 
 ```html
 <form method="POST">
-  <label for="name">Name</label>
-  <input type="text" name="name" id="name" autocomplete="name" />
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" autocomplete="name" />
 
-  <label for="email">Email</label>
-  <input
-    type="email"
-    name="email"
-    id="email"
-    autocomplete="email"
-    inputmode="email"
-  />
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" autocomplete="email" inputmode="email" />
 
-  <label for="password">Password</label>
-  <input
-    type="password"
-    name="password"
-    id="password"
-    autocomplete="new-password"
-  />
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" autocomplete="new-password" />
 
-  <button type="submit">Register</button>
+    <button type="submit">Register</button>
 </form>
 ```
 
@@ -94,9 +72,9 @@ You will see in the previous example that `name` is used to autocomplete the per
 ```html
 <label for="title">Title</label>
 <select name="title" name="title" autocomplete="honorific-prefix">
-  <option>Mr</option>
-  <option>Ms</option>
-  <option>Dr</option>
+    <option>Mr</option>
+    <option>Ms</option>
+    <option>Dr</option>
 </select>
 
 <label for="fname">First name</label>
@@ -112,18 +90,18 @@ Modern applications often make use of multi-factor authentication (2fa). This ca
 
 ```html
 <form method="POST">
-  <label for="code">Verification code</label>
-  <input
-    type="text"
-    name="verification_code"
-    id="code"
-    autocomplete="one-time-code"
-    inputmode="numeric"
-    pattern="\d{6}"
-    title="The verification code is invalid."
-  />
+    <label for="code">Verification code</label>
+    <input
+        type="text"
+        name="verification_code"
+        id="code"
+        autocomplete="one-time-code"
+        inputmode="numeric"
+        pattern="\d{6}"
+        title="The verification code is invalid."
+    />
 
-  <button type="submit">Confirm</button>
+    <button type="submit">Confirm</button>
 </form>
 ```
 
@@ -133,54 +111,54 @@ Payment is usually in the form of card details. Fortunately browsers can autofil
 
 ```html
 <form method="POST">
-  <label for="name">Name on card</label>
-  <input type="text" name="name" id="name" autocomplete="cc-name" />
+    <label for="name">Name on card</label>
+    <input type="text" name="name" id="name" autocomplete="cc-name" />
 
-  <label for="number">Card number</label>
-  <input
-    type="text"
-    name="card_number"
-    id="number"
-    autocomplete="cc-number"
-    inputmode="numeric"
-    pattern="\d{16}"
-    title="The card number is invalid."
-  />
+    <label for="number">Card number</label>
+    <input
+        type="text"
+        name="card_number"
+        id="number"
+        autocomplete="cc-number"
+        inputmode="numeric"
+        pattern="\d{16}"
+        title="The card number is invalid."
+    />
 
-  <label for="month">Month</label>
-  <input
-    type="text"
-    name="expiry_month"
-    id="month"
-    autocomplete="cc-exp-month"
-    inputmode="numeric"
-    pattern="0[1-9]|1[0-2]"
-    title="The expiry month does not match the format MM."
-  />
+    <label for="month">Month</label>
+    <input
+        type="text"
+        name="expiry_month"
+        id="month"
+        autocomplete="cc-exp-month"
+        inputmode="numeric"
+        pattern="0[1-9]|1[0-2]"
+        title="The expiry month does not match the format MM."
+    />
 
-  <label for="year">Year</label>
-  <input
-    type="text"
-    name="expiry_year"
-    id="year"
-    autocomplete="cc-exp-year"
-    inputmode="numeric"
-    pattern="\d{4}"
-    title="The expiry year does not match the format YYYY."
-  />
+    <label for="year">Year</label>
+    <input
+        type="text"
+        name="expiry_year"
+        id="year"
+        autocomplete="cc-exp-year"
+        inputmode="numeric"
+        pattern="\d{4}"
+        title="The expiry year does not match the format YYYY."
+    />
 
-  <label for="cvc">CVC</label>
-  <input
-    type="text"
-    name="cvc"
-    id="cvc"
-    autocomplete="cc-csc"
-    inputmode="numeric"
-    pattern="\d{3,4}"
-    title="The CVC is invalid."
-  />
+    <label for="cvc">CVC</label>
+    <input
+        type="text"
+        name="cvc"
+        id="cvc"
+        autocomplete="cc-csc"
+        inputmode="numeric"
+        pattern="\d{3,4}"
+        title="The CVC is invalid."
+    />
 
-  <button type="submit">Pay</button>
+    <button type="submit">Pay</button>
 </form>
 ```
 
@@ -189,8 +167,7 @@ Payment is usually in the form of card details. Fortunately browsers can autofil
 The card expiry `autocomplete` can take the month and year separately (as above) or in one field. Sadly, `month` input type is not widely supported so the above solution is preferred.
 
 ```html
-<label for="expiry">Expiry</label>
-<input type="month" name="expiry" id="expiry" autocomplete="cc-exp" />
+<label for="expiry">Expiry</label> <input type="month" name="expiry" id="expiry" autocomplete="cc-exp" />
 ```
 
 ## User profile
@@ -199,20 +176,20 @@ Most applications feature a user profile, with basic details that the user may (
 
 ```html
 <form method="POST">
-  <label for="dob">Date of birth</label>
-  <input type="date" name="dob" id="dob" autocomplete="bday" />
+    <label for="dob">Date of birth</label>
+    <input type="date" name="dob" id="dob" autocomplete="bday" />
 
-  <label for="website">Website</label>
-  <input type="url" name="website" id="website" autocomplete="url" />
+    <label for="website">Website</label>
+    <input type="url" name="website" id="website" autocomplete="url" />
 
-  <label for="gender">Gender</label>
-  <select name="gender" id="gender" autocomplete="sex">
-    <option>Female</option>
-    <option>Male</option>
-    <option>Other</option>
-  </select>
+    <label for="gender">Gender</label>
+    <select name="gender" id="gender" autocomplete="sex">
+        <option>Female</option>
+        <option>Male</option>
+        <option>Other</option>
+    </select>
 
-  <button type="submit">Save</button>
+    <button type="submit">Save</button>
 </form>
 ```
 
@@ -234,26 +211,26 @@ Below is my opinionated format for addresses that take care of the essentials. D
 
 ```html
 <form method="POST">
-  <label for="street">Street</label>
-  <textarea name="street" id="street" autocomplete="street-address"></textarea>
+    <label for="street">Street</label>
+    <textarea name="street" id="street" autocomplete="street-address"></textarea>
 
-  <label for="city">City/Town</label>
-  <input type="text" name="city" id="city" autocomplete="address-level2" />
+    <label for="city">City/Town</label>
+    <input type="text" name="city" id="city" autocomplete="address-level2" />
 
-  <label for="county">County</label>
-  <input type="text" name="county" id="county" autocomplete="address-level1" />
+    <label for="county">County</label>
+    <input type="text" name="county" id="county" autocomplete="address-level1" />
 
-  <label for="country">Country</label>
-  <select name="country" name="country" autocomplete="country">
-    <option value="GB">United Kingdom</option>
-    <option value="US">United States</option>
-    <option value="CA">Canada</option>
-  </select>
+    <label for="country">Country</label>
+    <select name="country" name="country" autocomplete="country">
+        <option value="GB">United Kingdom</option>
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+    </select>
 
-  <label for="postcode">Postcode</label>
-  <input type="text" name="postcode" id="postcode" autocomplete="postal-code" />
+    <label for="postcode">Postcode</label>
+    <input type="text" name="postcode" id="postcode" autocomplete="postal-code" />
 
-  <button type="submit">Send</button>
+    <button type="submit">Send</button>
 </form>
 ```
 
@@ -264,9 +241,9 @@ The `country` value informs the browser to autofill based on the 'ISO 3166-1-alp
 ```html
 <label for="country">Country</label>
 <select name="country" name="country" autocomplete="country-name">
-  <option>United Kingdom</option>
-  <option>United States</option>
-  <option>Canada</option>
+    <option>United Kingdom</option>
+    <option>United States</option>
+    <option>Canada</option>
 </select>
 ```
 
@@ -276,31 +253,16 @@ You can differentiate between shipping and billing fields by using the special t
 
 ```html
 <form method="POST">
-  <label for="street">Street</label>
-  <textarea
-    name="street"
-    id="street"
-    autocomplete="shipping street-address"
-  ></textarea>
+    <label for="street">Street</label>
+    <textarea name="street" id="street" autocomplete="shipping street-address"></textarea>
 
-  <label for="postcode">Postcode</label>
-  <input
-    type="text"
-    name="postcode"
-    id="postcode"
-    autocomplete="shipping postal-code"
-  />
+    <label for="postcode">Postcode</label>
+    <input type="text" name="postcode" id="postcode" autocomplete="shipping postal-code" />
 
-  <label for="tel">Contact number</label>
-  <input
-    type="tel"
-    name="tel"
-    id="tel"
-    autocomplete="shipping tel"
-    inputmode="tel"
-  />
+    <label for="tel">Contact number</label>
+    <input type="tel" name="tel" id="tel" autocomplete="shipping tel" inputmode="tel" />
 
-  <button type="submit">Buy</button>
+    <button type="submit">Buy</button>
 </form>
 ```
 
@@ -310,35 +272,18 @@ Many of the fields that usually appear in a job profile also show in the forms p
 
 ```html
 <form method="POST">
-  <label for="title">Job title</label>
-  <input
-    type="text"
-    name="title"
-    id="title"
-    autocomplete="organization-title"
-  />
+    <label for="title">Job title</label>
+    <input type="text" name="title" id="title" autocomplete="organization-title" />
 
-  <label for="company">Company</label>
-  <input type="text" name="company" id="company" autocomplete="organization" />
+    <label for="company">Company</label>
+    <input type="text" name="company" id="company" autocomplete="organization" />
 
-  <label for="email">Email</label>
-  <input
-    type="email"
-    name="email"
-    id="email"
-    autocomplete="work email"
-    inputmode="email"
-  />
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" autocomplete="work email" inputmode="email" />
 
-  <label for="tel">Telephone</label>
-  <input
-    type="tel"
-    name="tel"
-    id="tel"
-    autocomplete="work tel"
-    inputmode="tel"
-  />
+    <label for="tel">Telephone</label>
+    <input type="tel" name="tel" id="tel" autocomplete="work tel" inputmode="tel" />
 
-  <button type="submit">Submit</button>
+    <button type="submit">Submit</button>
 </form>
 ```

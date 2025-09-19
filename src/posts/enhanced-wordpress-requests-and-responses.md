@@ -5,6 +5,7 @@ description: How to extend WordPress Request and Response objects
 thumbnail: /img/wp-rest-api.png
 tags: ["php", "wordpress"]
 layout: post
+createdAt: 2024-01-01T00:00:00Z
 ---
 
 # Enhanced WordPress REST Requests and Responses

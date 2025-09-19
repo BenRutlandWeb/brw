@@ -5,6 +5,7 @@ description: A quick guide to getting started with Radiate - a WordPress plugin 
 thumbnail: https://radiate-framework.github.io/social-preview.png
 tags: ["radiate", "php", "wordpress"]
 layout: post
+createdAt: 2024-01-01T00:00:00Z
 ---
 
 # Getting started with Radiate
