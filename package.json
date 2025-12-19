@@ -18,7 +18,7 @@
         "markdown-it-anchor": "^8.6.5",
         "markdown-it-container": "^3.0.0",
         "markdown-it-external-links": "^0.0.6",
-        "markdown-it-prism": "^2.3.0",
+        "markdown-it-prism": "^2.3.1",
         "path": "^0.12.7",
         "postcss": "^8.4.18",
         "prismjs-material-theme": "^1.0.0",
