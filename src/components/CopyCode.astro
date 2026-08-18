@@ -1,0 +1,92 @@
+---
+import Icon from "@/components/Icon.astro";
+import IconButton from "@/components/IconButton.astro";
+---
+
+<template data-copy-code-template>
+  <IconButton
+    data-copy-code=""
+    class="code-copy text-white ring-white/40 p-1"
+    aria-label="Copy code"
+  >
+    <span data-copy-idle>
+      <Icon icon="content_copy" />
+    </span>
+    <span data-copy-done>
+      <Icon icon="check" />
+    </span>
+  </IconButton>
+</template>
+
+<p class="sr-only" aria-live="polite" data-copy-status></p>
+
+<script>
+  const COPIED_MS = 2000;
+
+  function getCodeText(pre: HTMLPreElement) {
+    const code = pre.querySelector("code");
+    if (code) return code.textContent ?? "";
+
+    const clone = pre.cloneNode(true) as HTMLElement;
+    clone.querySelectorAll("[data-copy-code]").forEach((el) => el.remove());
+    return clone.textContent ?? "";
+  }
+
+  function cloneButton() {
+    const template = document.querySelector<HTMLTemplateElement>("[data-copy-code-template]");
+    const button = template?.content.firstElementChild?.cloneNode(true);
+    return button instanceof HTMLElement ? button : null;
+  }
+
+  function enhanceCodeBlocks() {
+    document.querySelectorAll("pre").forEach((pre) => {
+      if (
+        pre.querySelector("[data-copy-code]") ||
+        pre.closest(".code-block") ||
+        pre.closest(".format-preview")
+      ) {
+        return;
+      }
+
+      const button = cloneButton();
+      if (!button) return;
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "code-block";
+      pre.replaceWith(wrapper);
+      wrapper.append(pre, button);
+    });
+  }
+
+  document.addEventListener("click", async (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const button = target.closest<HTMLElement>("[data-copy-code]");
+    if (!button) return;
+
+    const block = button.closest(".code-block");
+    const pre = (block?.querySelector("pre") ?? button.closest("pre")) as HTMLPreElement | null;
+    if (!pre) return;
+
+    try {
+      await navigator.clipboard.writeText(getCodeText(pre));
+    } catch {
+      return;
+    }
+
+    button.classList.add("is-copied");
+    button.setAttribute("aria-label", "Copied");
+
+    const status = document.querySelector("[data-copy-status]");
+    if (status) status.textContent = "Copied";
+
+    window.setTimeout(() => {
+      button.classList.remove("is-copied");
+      button.setAttribute("aria-label", "Copy code");
+      if (status) status.textContent = "";
+    }, COPIED_MS);
+  });
+
+  enhanceCodeBlocks();
+</script>

@@ -30,7 +30,7 @@ const posts = (await getSortedPosts()).filter((post) => tag && post.data.tags?.i
     {posts.length ? (
       <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8">
         {posts.map((post) => (
-          <li>
+          <li class="h-full">
             <PostCard post={post} />
           </li>
         ))}

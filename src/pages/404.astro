@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Button from "@/components/Button.astro";
-import DoubleSlash from "@/components/DoubleSlash.astro";
 import Icon from "@/components/Icon.astro";
+import type { IconName } from "@/lib/icons";
 
-const formats = [
+const formats: { id: string; icon: IconName; label: string; body: string }[] = [
   {
     id: "html",
     icon: "code",
@@ -97,8 +97,8 @@ document.body.innerHTML = template;
       <div class="max-w-prose mb-8">
         <h1 class="text-4xl font-extrabold mb-8">404: Page not found.</h1>
         <p class="text-lead mb-4">The page you were looking for was not found.</p>
-        <Button href="/" class="bg-brand-green ring-brand-green/40 text-brand-blue">
-          <DoubleSlash />
+        <Button href="/" class="bg-brand-green text-brand-blue">
+          <Icon slot="before" icon="brw" class="fill-current inline-block size-[1.5rem]" />
           Go home
         </Button>
       </div>

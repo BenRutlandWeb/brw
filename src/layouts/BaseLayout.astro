@@ -3,7 +3,7 @@ import "@/index.css";
 import { Font } from "astro:assets";
 import Icon from "@/components/Icon.astro";
 import IconButton from "@/components/IconButton.astro";
-import DoubleSlash from "@/components/DoubleSlash.astro";
+import CopyCode from "@/components/CopyCode.astro";
 import ProgressBar from "@/components/ProgressBar.astro";
 
 interface Props {
@@ -35,9 +35,12 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
     <div id="app">
       <header class="container sticky top-0 bg-brand-blue text-white py-2 z-50">
         <div class="content-wide">
-          <div class="flex items-center justify-between gap-4 md:gap-6">
-            <a href="/" class="flex items-center gap-4 text-xl h-10">
-              <span class="opacity-40"><DoubleSlash /></span>
+          <div class="flex justify-between gap-4 md:gap-6">
+            <a
+              href="/"
+              class="flex items-center gap-4 text-xl rounded px-2 -mx-2 focus:outline-hidden focus-visible:ring-2 ring-white/40 transition"
+            >
+              <Icon icon="brw" class="fill-current inline-block size-[1.5rem] opacity-40" />
               <span class="whitespace-nowrap">Ben Rutland Web</span>
             </a>
             <nav>
@@ -47,8 +50,8 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
                     href="/"
                     aria-current={pathname === "/" ? "page" : undefined}
                     class:list={[
-                      "focus-visible:ring-2 ring-white/40 p-1",
-                      pathname === "/" ? "text-brand-green" : "text-white/40",
+                      "focus-visible:ring-2 p-1",
+                      pathname === "/" ? "text-brand-green ring-brand-green" : "text-white/40 ring-white/40",
                     ]}
                   >
                     <Icon icon="home" />
@@ -60,8 +63,8 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
                     href="/posts"
                     aria-current={pathname === "/posts" ? "page" : undefined}
                     class:list={[
-                      "focus-visible:ring-2 ring-white/40 p-1",
-                      pathname === "/posts" ? "text-brand-green" : "text-white/40",
+                      "focus-visible:ring-2 p-1",
+                      pathname === "/posts" ? "text-brand-green ring-brand-green" : "text-white/40 ring-white/40",
                     ]}
                   >
                     <Icon icon="notes" />
@@ -84,7 +87,7 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
       <footer class="bg-gray-100 container py-8 text-center">
         <div class="content-wide flex flex-wrap items-center justify-between gap-y-4 gap-x-6">
           <div class="flex flex-1 items-center gap-4 text-lg">
-            <span class="text-gray-300"><DoubleSlash /></span>
+            <Icon icon="brw" class="fill-current inline-block size-[1.5rem] text-gray-300" />
             <span class="whitespace-nowrap">{new Date().getFullYear()} &copy; Ben Rutland Web</span>
           </div>
 
@@ -141,6 +144,7 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
         </div>
       </footer>
     </div>
+    <CopyCode />
   </body>
 </html>
 
