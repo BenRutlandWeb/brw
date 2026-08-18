@@ -1,0 +1,4 @@
+{
+  "name": "Alpine",
+  "regex": "alpine(\\.js)?"
+}

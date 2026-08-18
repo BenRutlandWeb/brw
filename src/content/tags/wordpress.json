@@ -1,0 +1,5 @@
+{
+  "name": "WordPress",
+  "regex": "wordpress|wp",
+  "description": "Like much of the internet, WordPress rules dominant in my web development. Aside from my work, I develop the WordPress plugin/theme framework Radiate."
+}

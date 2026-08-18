@@ -1,0 +1,170 @@
+---
+import "@/index.css";
+import { Font } from "astro:assets";
+import Icon from "@/components/Icon.astro";
+import IconButton from "@/components/IconButton.astro";
+import DoubleSlash from "@/components/DoubleSlash.astro";
+import ProgressBar from "@/components/ProgressBar.astro";
+
+interface Props {
+  title?: string;
+  description?: string | null;
+  showProgress?: boolean;
+}
+
+const { title = "Ben Rutland Web", description, showProgress = false } = Astro.props;
+const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-roboto-mono" />
+  </head>
+  <body class="text-brand-blue" id="top">
+    <div id="app">
+      <header class="container sticky top-0 bg-brand-blue text-white py-2 z-50">
+        <div class="content-wide">
+          <div class="flex items-center justify-between gap-4 md:gap-6">
+            <a href="/" class="flex items-center gap-4 text-xl h-10">
+              <span class="opacity-40"><DoubleSlash /></span>
+              <span class="whitespace-nowrap">Ben Rutland Web</span>
+            </a>
+            <nav>
+              <ul class="flex items-center gap-1 font-mono text-lg md:text-xl">
+                <li>
+                  <IconButton
+                    href="/"
+                    class:list={[
+                      "text-white text-opacity-40 focus-visible:ring-2 ring-white p-1",
+                      pathname === "/" && "text-brand-green text-opacity-100",
+                    ]}
+                  >
+                    <Icon icon="home" />
+                    <span class="sr-only">Home</span>
+                  </IconButton>
+                </li>
+                <li>
+                  <IconButton
+                    href="/posts"
+                    class:list={[
+                      "text-white text-opacity-40 focus-visible:ring-2 ring-white p-1",
+                      pathname === "/posts" && "text-brand-green text-opacity-100",
+                    ]}
+                  >
+                    <Icon icon="notes" />
+                    <span class="sr-only">Posts</span>
+                  </IconButton>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container">
+          {showProgress && <ProgressBar />}
+          <slot />
+        </div>
+      </main>
+
+      <footer class="bg-gray-100 container py-8 text-center">
+        <div class="content-wide flex flex-wrap items-center justify-between gap-y-4 gap-x-6">
+          <div class="flex flex-1 items-center gap-4 text-lg">
+            <span class="text-gray-300"><DoubleSlash /></span>
+            <span class="whitespace-nowrap">{new Date().getFullYear()} &copy; Ben Rutland Web</span>
+          </div>
+
+          <ul class="flex items-center justify-between gap-1 font-mono text-lg md:text-xl text-gray-500">
+            <li>
+              <IconButton
+                href="https://radiate-framework.github.io/"
+                target="_blank"
+                rel="external nofollow noreferrer noopener"
+                class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+              >
+                <div class="sr-only">Radiate documentation site</div>
+                <Icon icon="radiate" />
+              </IconButton>
+            </li>
+            <li>
+              <IconButton
+                href="https://codepen.io/BenRutlandWeb"
+                target="_blank"
+                rel="external nofollow noreferrer noopener"
+                class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+              >
+                <div class="sr-only">CodePen site</div>
+                <Icon icon="codepen" />
+              </IconButton>
+            </li>
+            <li>
+              <IconButton
+                href="https://github.com/BenRutlandWeb"
+                target="_blank"
+                rel="external nofollow noreferrer noopener"
+                class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+              >
+                <div class="sr-only">Github profile</div>
+                <Icon icon="github" />
+              </IconButton>
+            </li>
+            <li>
+              <IconButton
+                href="https://www.linkedin.com/in/benrutlandweb/"
+                target="_blank"
+                rel="external nofollow noreferrer noopener"
+                class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+              >
+                <div class="sr-only">LinkedIn profile</div>
+                <Icon icon="linkedin" />
+              </IconButton>
+            </li>
+          </ul>
+          <IconButton href="#top" class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1">
+                <div class="sr-only">Back to top</div>
+            <Icon icon="arrow_upward" />
+          </IconButton>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  html {
+    --header-height: 3.5rem;
+    scroll-padding-block-start: calc(var(--header-height) + 1.5rem);
+    scroll-behavior: smooth;
+  }
+
+  #app {
+    min-height: 100vh;
+    display: grid;
+    grid:
+      "banner" auto
+      "header" auto
+      "main" 1fr
+      "footer" auto / auto;
+  }
+
+  header {
+    grid-area: header;
+    font-size: 1.5rem;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+</style>

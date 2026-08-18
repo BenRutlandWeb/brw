@@ -1,0 +1,49 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Button from "@/components/Button.astro";
+import DoubleSlash from "@/components/DoubleSlash.astro";
+import PostCard from "@/components/PostCard.astro";
+import { getSortedPosts } from "@/lib/posts";
+
+const posts = (await getSortedPosts()).slice(0, 3);
+---
+
+<BaseLayout title="Ben Rutland Web">
+  <div class="content-wide py-16">
+    <div class="max-w-prose mb-8">
+      <h1 class="text-4xl font-extrabold mb-8">Welcome to Ben Rutland Web</h1>
+      <p class="text-lead mb-4">
+        I'm a senior web developer at <a
+          href="https://andanotherday.com/"
+          class="external-link"
+          target="_blank"
+          rel="nofollow noopener noreferrer external">And Another Day</a
+        >. I'm the creator of the <a
+          href="https://radiate-framework.github.io/"
+          class="external-link"
+          target="_blank"
+          rel="nofollow noopener noreferrer external">Radiate</a
+        > framework, and I specialize in WordPress and Laravel PHP development, and front-end tech.
+      </p>
+    </div>
+  </div>
+
+  <div class="content-screen container py-16 mb-32 gap-y-8">
+    <div class="border-b container content-screen">
+      <div class="content-wide flex flex-wrap gap-4 justify-between items-center pb-4">
+        <h2 class="text-4xl">Posts</h2>
+        <Button href="/posts" class="bg-brand-green ring-brand-green text-brand-blue">
+          <DoubleSlash /> View all posts
+        </Button>
+      </div>
+    </div>
+
+    <ul class="content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {posts.map((post) => (
+        <li>
+          <PostCard post={post} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

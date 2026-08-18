@@ -1,50 +1,17 @@
 module.exports = {
-  mode: "jit",
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-    "./vite.config.js",
-  ],
-  darkMode: "media", // or 'media' or 'class'
+  content: ["./src/**/*.{astro,js,ts,md}"],
+  darkMode: "media",
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-to-br": "linear-gradient(135deg, var(--tw-gradient-stops))",
-      },
       colors: {
         brand: {
           green: "#12be88",
           blue: "#111827",
-          pink: "#ff72b8",
-        },
-        radiate: {
-          yellow: "#ffd460",
-          red: "#EA5455",
-          black: "#2d4059",
-        },
-        brands: {
-          laravel: "#f55247",
-          wordpress: "#21759b",
-        },
-        "international-womens-day": {
-          dark: "#54347b",
-          light: "#d84cb5",
-        },
-        "autism-awareness-day": {
-          dark: "#132a61",
-          light: "#2c52af",
-        },
-        "earth-day": {
-          dark: "#1c6445",
-          light: "#33c786",
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        mono: ["Roboto Mono", "monospace"],
-      },
-      ringWidth: {
-        6: "6px",
+        sans: ["var(--font-inter)"],
+        mono: ["var(--font-roboto-mono)"],
       },
       typography: {
         DEFAULT: {
@@ -66,9 +33,6 @@ module.exports = {
         },
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   corePlugins: {
     container: false,

@@ -1,5 +1,3 @@
 # Ben Rutland Web
 
-Vite/Vue/Tailwind powered static site blog.
-
-Will eventually replace the WordPRess site
+Astro and Tailwind static site blog.

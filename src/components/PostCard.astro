@@ -1,0 +1,36 @@
+---
+import PostMeta from "@/components/PostMeta.astro";
+import DoubleSlash from "@/components/DoubleSlash.astro";
+
+interface Props {
+  post: {
+    href: string;
+    meta: {
+      name: string;
+      thumbnail?: string | null;
+      createdAt: Date | string;
+      stats: { text: string };
+    };
+  };
+}
+
+const { post } = Astro.props;
+---
+
+<a href={post.href} class="grid gap-4">
+  {post.meta.thumbnail ? (
+    <img
+      src={post.meta.thumbnail}
+      alt={post.meta.name}
+      class="w-full aspect-w-3 aspect-h-2 block object-cover rounded"
+    />
+  ) : (
+    <div class="grid place-items-center aspect-w-3 aspect-h-2 text-8xl rounded bg-gray-100 text-gray-300">
+      <DoubleSlash />
+    </div>
+  )}
+  <div class="mb-8">
+    <PostMeta post={post} />
+    <h3 class="text-2xl mt-2">{post.meta.name}</h3>
+  </div>
+</a>

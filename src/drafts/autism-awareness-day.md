@@ -8,9 +8,11 @@ layout: post
 
 # Autism awareness day
 
-::: lead
+<div class="text-lead">
+
 Help create a society that works for autistic people.
-:::
+
+</div>
 
 ![Autism awareness day](/img/autism-awareness-day.png)
 
