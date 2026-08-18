@@ -1,0 +1,149 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Button from "@/components/Button.astro";
+import DoubleSlash from "@/components/DoubleSlash.astro";
+import Icon from "@/components/Icon.astro";
+
+const formats = [
+  {
+    id: "html",
+    icon: "code",
+    label: "HTML",
+    body: `HTTP/1.1 404 Not Found
+Content-Type: text/html; charset=UTF-8
+
+<h1>404: Page Not Found.</h1>
+<p>The page you were looking for was not found.</p>
+<p>
+    <a href="/">Go home</a>
+</p>
+`,
+  },
+  {
+    id: "markdown",
+    icon: "tag",
+    label: "Markdown",
+    body: `HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=UTF-8
+
+# 404: Page Not Found.
+
+The page you were looking for was not found.
+
+[Go home](/)
+`,
+  },
+  {
+    id: "json",
+    icon: "data_object",
+    label: "JSON",
+    body: `HTTP/1.1 404 Not Found
+Content-Type: application/json; charset=UTF-8
+
+{
+  "error": {
+    "status": 404,
+    "message": "Not found"
+  },
+  "content": {
+    "title": "404: Page Not Found.",
+    "message": "The page you were looking for was not found.",
+    "action": {
+      "url": "/",
+      "text": "Go home"
+    }
+  }
+}
+`,
+  },
+  {
+    id: "javascript",
+    icon: "data_array",
+    label: "JavaScript",
+    body: `HTTP/1.1 404 Not Found
+Content-Type: application/javascript; charset=UTF-8
+
+const content = {
+  title: "404: Page Not Found.",
+  message: "The page you were looking for was not found.",
+  action: {
+    url: "/",
+    text: "Go home"
+  }
+};
+
+const  { title, message, action } = content
+
+const template = \`
+<h1>\${title}</h1>
+<p>\${message}</p>
+<p>
+    <a href="\${action.url}">\${action.text}</a>
+</p>
+\`;
+
+document.body.innerHTML = template;
+`,
+  },
+];
+---
+
+<BaseLayout title="Page not found // Ben Rutland Web">
+  <div class="content-screen container">
+    <div class="content-wide py-16">
+      <div class="max-w-prose mb-8">
+        <h1 class="text-4xl font-extrabold mb-8">404: Page not found.</h1>
+        <p class="text-lead mb-4">The page you were looking for was not found.</p>
+        <Button href="/" class="bg-brand-green ring-brand-green text-brand-blue">
+          <DoubleSlash />
+          Go home
+        </Button>
+      </div>
+
+      <fieldset class="format-preview m-0 min-w-0 border-0 p-0">
+        <legend class="sr-only">404 response format</legend>
+        <div class="mb-2 flex justify-end gap-1">
+          {
+            formats.map((format, index) => (
+              <div>
+                <input
+                  type="radio"
+                  name="format-404"
+                  id={`format-${format.id}`}
+                  value={format.id}
+                  class="peer sr-only"
+                  checked={index === 0}
+                />
+                <label
+                  for={`format-${format.id}`}
+                  class="block cursor-pointer rounded p-1 leading-3 text-gray-500 ring-gray-500 ring-opacity-40 transition peer-checked:text-brand-green peer-focus-visible:ring-2"
+                >
+                  <span class="sr-only">{format.label}</span>
+                  <Icon icon={format.icon} />
+                </label>
+              </div>
+            ))
+          }
+        </div>
+        {
+          formats.map((format) => (
+            <pre data-format={format.id} class="whitespace-pre-wrap rounded bg-gray-50 p-4">{format.body}</pre>
+          ))
+        }
+      </fieldset>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .format-preview pre {
+    display: none;
+  }
+
+  .format-preview:has(#format-html:checked) [data-format="html"],
+  .format-preview:has(#format-markdown:checked) [data-format="markdown"],
+  .format-preview:has(#format-json:checked) [data-format="json"],
+  .format-preview:has(#format-javascript:checked) [data-format="javascript"] {
+    display: block;
+  }
+</style>

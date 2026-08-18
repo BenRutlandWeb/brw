@@ -1,0 +1,35 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PostCard from "@/components/PostCard.astro";
+import tags from "@/api/tags.json";
+import { getSortedPosts } from "@/lib/posts";
+
+export async function getStaticPaths() {
+  return tags.map((tag) => ({ params: { tag: tag.path } }));
+}
+
+const { tag } = Astro.params;
+const selectedTag = tags.find((item) => item.path === tag);
+const posts = (await getSortedPosts()).filter((post) => post.data.tags?.includes(tag));
+---
+
+<BaseLayout title={`${selectedTag?.name ?? "Tag"} // Ben Rutland Web`}>
+  <div class="content-wide pt-16 pb-32">
+    <div class="max-w-prose mb-8">
+      <h1 class="text-4xl font-extrabold mb-8">{selectedTag?.name ?? "Tag"}</h1>
+      {selectedTag?.description && <p class="text-lead">{selectedTag.description}</p>}
+    </div>
+
+    {posts.length ? (
+      <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8">
+        {posts.map((post) => (
+          <li>
+            <PostCard post={post} />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No posts found.</p>
+    )}
+  </div>
+</BaseLayout>

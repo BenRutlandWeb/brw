@@ -10,9 +10,11 @@ createdAt: 2024-01-01T00:00:00Z
 
 # ACF Field Group Builder
 
-::: lead
+<div class="text-lead">
+
 A braindump of how an ACF Field Group Builder might work.
-:::
+
+</div>
 
 I want something like Laravels' `Schema` builder for ACF fields:
 

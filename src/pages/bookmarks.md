@@ -6,9 +6,11 @@ description: A collection of links to aid web development
 
 # Bookmarks
 
-::: lead
+<div class="text-lead">
+
 Here is a list of links that I find useful for development:
-:::
+
+</div>
 
 ## HTTP
 

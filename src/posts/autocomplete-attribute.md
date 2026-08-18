@@ -10,9 +10,11 @@ createdAt: 2024-01-01T00:00:00Z
 
 # Autocomplete attribute
 
-::: lead
+<div class="text-lead">
+
 Save time for your users by providing the `autocomplete` attribute to your form elements.
-:::
+
+</div>
 
 ![Web form](/img/login-form.png)
 

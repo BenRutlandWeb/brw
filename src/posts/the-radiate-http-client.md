@@ -10,9 +10,11 @@ createdAt: 2024-01-01T00:00:00Z
 
 # The Radiate HTTP client
 
-::: lead
+<div class="text-lead">
+
 Make API calls from your application with the Radiate `Http` facade.
-:::
+
+</div>
 
 ![Radiate HTTP client code](/img/radiate-http-client.png)
 

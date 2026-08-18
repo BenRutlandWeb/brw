@@ -1,0 +1,41 @@
+---
+import allTags from "@/api/tags.json";
+
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+const selectedTags = tags
+  .map((tag) => allTags.find((item) => item.path === tag))
+  .filter(Boolean);
+---
+
+{
+  selectedTags.length > 0 && (
+    <ul class="text-gray-400 flex flex-wrap font-mono text-lg">
+      {selectedTags.map((tag) => (
+        <li>
+          <a
+            href={`/tags/${tag.path}`}
+            class="text-gray-500 hover:text-brand-blue hover:bg-brand-green focus:outline-none focus:text-brand-blue focus:bg-brand-green transition rounded px-0.5"
+          >
+            {tag.regex}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+<style>
+  ul::before {
+    content: "/^(";
+  }
+  ul::after {
+    content: ")$/i";
+  }
+  li + li::before {
+    content: "|";
+  }
+</style>

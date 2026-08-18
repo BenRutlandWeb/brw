@@ -9,9 +9,11 @@ layout: post
 
 # AJAX routes with Radiate
 
-::: lead
+<div class="text-lead">
+
 AJAX routes in Radiate couldn't be simpler.
-:::
+
+</div>
 
 ![Radiate AJAX route code](/img/radiate-ajax.png)
 

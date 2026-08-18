@@ -9,9 +9,11 @@ createdAt: 2024-01-01T00:00:00Z
 
 # Using the `:has()` relational selector
 
-::: lead
+<div class="text-lead">
+
 How to use the :has() relational selector to make a star-rating component
-:::
+
+</div>
 
 ![Enhanced WordPress REST Requests and Responses](/img/wp-rest-api.png)
 

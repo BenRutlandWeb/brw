@@ -10,9 +10,11 @@ createdAt: 2024-01-01T00:00:00Z
 
 # Extend the WordPress user model
 
-::: lead
+<div class="text-lead">
+
 Extending the `WP_User` class can help development by creating useful methods to interact with the user model.
-:::
+
+</div>
 
 ![Extend the WordPress user model](/img/extend-the-wordpress-user-model.png)
 

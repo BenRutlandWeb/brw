@@ -10,9 +10,11 @@ createdAt: 2024-01-01T00:00:00Z
 
 # Enhanced WordPress REST Requests and Responses
 
-::: lead
+<div class="text-lead">
+
 How to extend WordPress Request and Response objects.
-:::
+
+</div>
 
 ![Enhanced WordPress REST Requests and Responses](/img/wp-rest-api.png)
 

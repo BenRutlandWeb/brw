@@ -1,0 +1,27 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PostCard from "@/components/PostCard.astro";
+import { getSortedPosts } from "@/lib/posts";
+
+const posts = await getSortedPosts();
+---
+
+<BaseLayout title="Posts // Ben Rutland Web">
+  <div class="content-wide pt-16 pb-32">
+    <div class="max-w-prose mb-8">
+      <h1 class="text-4xl font-extrabold mb-8">Posts</h1>
+      <p class="text-lead">
+        I'm not very good at writing blog posts so this page may be blank for a very long time... Or I may get
+        the buzz for it and need to implement pagination.
+      </p>
+    </div>
+
+    <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8">
+      {posts.map((post) => (
+        <li>
+          <PostCard post={post} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

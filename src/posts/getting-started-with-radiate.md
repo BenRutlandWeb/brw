@@ -10,9 +10,11 @@ createdAt: 2024-01-01T00:00:00Z
 
 # Getting started with Radiate
 
-::: lead
+<div class="text-lead">
+
 A quick guide to getting started with Radiate - a WordPress plugin/theme framework inspired by Laravel.
-:::
+
+</div>
 
 ![Radiate logo](https://radiate-framework.github.io/social-preview.png)
 

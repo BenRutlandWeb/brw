@@ -1,0 +1,14 @@
+---
+import iconsUrl from "@/assets/icons.svg?url";
+
+interface Props {
+  icon: string;
+  class?: string;
+}
+
+const { icon, class: className = "fill-current inline-block w-6 h-6" } = Astro.props;
+---
+
+<svg class={className} aria-hidden="true">
+  <use href={`${iconsUrl}#${icon}`}></use>
+</svg>
