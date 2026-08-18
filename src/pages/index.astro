@@ -8,7 +8,10 @@ import { getSortedPosts } from "@/lib/posts";
 const posts = (await getSortedPosts()).slice(0, 3);
 ---
 
-<BaseLayout title="Ben Rutland Web">
+<BaseLayout
+  title="Ben Rutland Web"
+  description="Senior web developer at And Another Day. Creator of the Radiate WordPress framework, specializing in WordPress, Laravel, and front-end development."
+>
   <div class="content-wide py-16">
     <div class="max-w-prose mb-8">
       <h1 class="text-4xl font-extrabold mb-8">Welcome to Ben Rutland Web</h1>
@@ -41,7 +44,7 @@ const posts = (await getSortedPosts()).slice(0, 3);
     <ul class="content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
       {posts.map((post) => (
         <li>
-          <PostCard post={post} />
+          <PostCard post={post} heading="h3" />
         </li>
       ))}
     </ul>

@@ -14,7 +14,13 @@ const selectedTag = await getTag(tag);
 const posts = (await getSortedPosts()).filter((post) => tag && post.data.tags?.includes(tag));
 ---
 
-<BaseLayout title={`${selectedTag?.data.name ?? "Tag"} // Ben Rutland Web`}>
+<BaseLayout
+  title={`${selectedTag?.data.name ?? "Tag"} // Ben Rutland Web`}
+  description={
+    selectedTag?.data.description ??
+    `Posts tagged ${selectedTag?.data.name ?? tag} on Ben Rutland Web.`
+  }
+>
   <div class="content-wide pt-16 pb-32">
     <div class="max-w-prose mb-8">
       <h1 class="text-4xl font-extrabold mb-8">{selectedTag?.data.name ?? "Tag"}</h1>

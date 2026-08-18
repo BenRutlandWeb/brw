@@ -1,7 +1,7 @@
 ---
 name: The Radiate HTTP client
 title: The Radiate HTTP client // Ben Rutland Web
-description:
+description: Make API calls from your WordPress plugin or theme with the Radiate HTTP client.
 thumbnail: /img/radiate-http-client.png
 tags: ["radiate", "wordpress", "php", "http"]
 layout: post

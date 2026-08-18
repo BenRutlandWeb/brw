@@ -8,9 +8,15 @@
     top: var(--header-height);
     transform: scaleX(0);
     transform-origin: left;
-    animation: reading-progress linear;
-    animation-timeline: scroll();
-    animation-timeline: scroll(root);
+    animation-name: reading-progress;
+    animation-timing-function: linear;
+  }
+
+  /* Separate rule: minifiers must not fold timeline into the animation shorthand. */
+  @supports (animation-timeline: scroll()) {
+    [data-progress-bar] {
+      animation-timeline: scroll(root);
+    }
   }
 
   @keyframes reading-progress {
