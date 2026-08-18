@@ -45,9 +45,10 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
                 <li>
                   <IconButton
                     href="/"
+                    aria-current={pathname === "/" ? "page" : undefined}
                     class:list={[
-                      "text-white text-opacity-40 focus-visible:ring-2 ring-white p-1",
-                      pathname === "/" && "text-brand-green text-opacity-100",
+                      "focus-visible:ring-2 ring-white/40 p-1",
+                      pathname === "/" ? "text-brand-green" : "text-white/40",
                     ]}
                   >
                     <Icon icon="home" />
@@ -57,9 +58,10 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
                 <li>
                   <IconButton
                     href="/posts"
+                    aria-current={pathname === "/posts" ? "page" : undefined}
                     class:list={[
-                      "text-white text-opacity-40 focus-visible:ring-2 ring-white p-1",
-                      pathname === "/posts" && "text-brand-green text-opacity-100",
+                      "focus-visible:ring-2 ring-white/40 p-1",
+                      pathname === "/posts" ? "text-brand-green" : "text-white/40",
                     ]}
                   >
                     <Icon icon="notes" />
@@ -92,7 +94,7 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
                 href="https://radiate-framework.github.io/"
                 target="_blank"
                 rel="external nofollow noreferrer noopener"
-                class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+                class="text-gray-500 focus-visible:ring-2 ring-gray-500/40 p-1"
               >
                 <div class="sr-only">Radiate documentation site</div>
                 <Icon icon="radiate" />
@@ -103,7 +105,7 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
                 href="https://codepen.io/BenRutlandWeb"
                 target="_blank"
                 rel="external nofollow noreferrer noopener"
-                class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+                class="text-gray-500 focus-visible:ring-2 ring-gray-500/40 p-1"
               >
                 <div class="sr-only">CodePen site</div>
                 <Icon icon="codepen" />
@@ -114,7 +116,7 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
                 href="https://github.com/BenRutlandWeb"
                 target="_blank"
                 rel="external nofollow noreferrer noopener"
-                class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+                class="text-gray-500 focus-visible:ring-2 ring-gray-500/40 p-1"
               >
                 <div class="sr-only">Github profile</div>
                 <Icon icon="github" />
@@ -125,14 +127,14 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
                 href="https://www.linkedin.com/in/benrutlandweb/"
                 target="_blank"
                 rel="external nofollow noreferrer noopener"
-                class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1"
+                class="text-gray-500 focus-visible:ring-2 ring-gray-500/40 p-1"
               >
                 <div class="sr-only">LinkedIn profile</div>
                 <Icon icon="linkedin" />
               </IconButton>
             </li>
           </ul>
-          <IconButton href="#top" class="text-gray-500 focus-visible:ring-2 ring-gray-500 p-1">
+          <IconButton href="#top" class="text-gray-500 focus-visible:ring-2 ring-gray-500/40 p-1">
                 <div class="sr-only">Back to top</div>
             <Icon icon="arrow_upward" />
           </IconButton>

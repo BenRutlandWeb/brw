@@ -23,10 +23,10 @@ const { post, heading: Heading = "h2" } = Astro.props;
     <img
       src={post.meta.thumbnail}
       alt={post.meta.name}
-      class="w-full aspect-w-3 aspect-h-2 block object-cover rounded"
+      class="w-full aspect-3/2 block object-cover rounded"
     />
   ) : (
-    <div class="grid place-items-center aspect-w-3 aspect-h-2 text-8xl rounded bg-gray-100 text-gray-300">
+    <div class="grid place-items-center aspect-3/2 text-8xl rounded bg-gray-100 text-gray-300">
       <DoubleSlash />
     </div>
   )}
