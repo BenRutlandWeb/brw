@@ -1,23 +1,24 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PostCard from "@/components/PostCard.astro";
-import tags from "@/api/tags.json";
 import { getSortedPosts } from "@/lib/posts";
+import { getTag, getTags } from "@/lib/tags";
 
 export async function getStaticPaths() {
-  return tags.map((tag) => ({ params: { tag: tag.path } }));
+  const tags = await getTags();
+  return tags.map((tag) => ({ params: { tag: tag.id } }));
 }
 
 const { tag } = Astro.params;
-const selectedTag = tags.find((item) => item.path === tag);
-const posts = (await getSortedPosts()).filter((post) => post.data.tags?.includes(tag));
+const selectedTag = await getTag(tag);
+const posts = (await getSortedPosts()).filter((post) => tag && post.data.tags?.includes(tag));
 ---
 
-<BaseLayout title={`${selectedTag?.name ?? "Tag"} // Ben Rutland Web`}>
+<BaseLayout title={`${selectedTag?.data.name ?? "Tag"} // Ben Rutland Web`}>
   <div class="content-wide pt-16 pb-32">
     <div class="max-w-prose mb-8">
-      <h1 class="text-4xl font-extrabold mb-8">{selectedTag?.name ?? "Tag"}</h1>
-      {selectedTag?.description && <p class="text-lead">{selectedTag.description}</p>}
+      <h1 class="text-4xl font-extrabold mb-8">{selectedTag?.data.name ?? "Tag"}</h1>
+      {selectedTag?.data.description && <p class="text-lead">{selectedTag.data.description}</p>}
     </div>
 
     {posts.length ? (

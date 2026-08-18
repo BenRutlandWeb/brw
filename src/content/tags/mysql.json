@@ -1,0 +1,4 @@
+{
+  "name": "MYSQL",
+  "regex": "(my)?sql"
+}
