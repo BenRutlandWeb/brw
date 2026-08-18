@@ -3,6 +3,7 @@ import PostMeta from "@/components/PostMeta.astro";
 import DoubleSlash from "@/components/DoubleSlash.astro";
 
 interface Props {
+  heading?: "h2" | "h3";
   post: {
     href: string;
     meta: {
@@ -14,7 +15,7 @@ interface Props {
   };
 }
 
-const { post } = Astro.props;
+const { post, heading: Heading = "h2" } = Astro.props;
 ---
 
 <a href={post.href} class="grid gap-4">
@@ -31,6 +32,6 @@ const { post } = Astro.props;
   )}
   <div class="mb-8">
     <PostMeta post={post} />
-    <h3 class="text-2xl mt-2">{post.meta.name}</h3>
+    <Heading class="text-2xl mt-2">{post.meta.name}</Heading>
   </div>
 </a>

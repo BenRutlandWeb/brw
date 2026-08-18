@@ -44,7 +44,7 @@ const posts = (await getSortedPosts()).slice(0, 3);
     <ul class="content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
       {posts.map((post) => (
         <li>
-          <PostCard post={post} />
+          <PostCard post={post} heading="h3" />
         </li>
       ))}
     </ul>
