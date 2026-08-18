@@ -12,7 +12,11 @@ interface Props {
   showProgress?: boolean;
 }
 
+const DEFAULT_DESCRIPTION =
+  "Senior web developer specializing in WordPress, Laravel, and front-end tech. Creator of the Radiate WordPress framework.";
+
 const { title = "Ben Rutland Web", description, showProgress = false } = Astro.props;
+const metaDescription = description?.trim() || DEFAULT_DESCRIPTION;
 const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
 ---
 
@@ -23,7 +27,7 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    {description && <meta name="description" content={description} />}
+    <meta name="description" content={metaDescription} />
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-roboto-mono" />
   </head>

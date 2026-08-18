@@ -23,7 +23,11 @@ const listingPost = {
 };
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description} showProgress>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description || `${post.data.name} — an article on Ben Rutland Web.`}
+  showProgress
+>
   <div class="content-screen container border-b py-8">
     <div class="grid gap-4">
       <TagList tags={post.data.tags ?? []} />
