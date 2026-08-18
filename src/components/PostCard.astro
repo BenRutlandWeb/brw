@@ -1,6 +1,6 @@
 ---
 import PostMeta from "@/components/PostMeta.astro";
-import DoubleSlash from "@/components/DoubleSlash.astro";
+import Icon from "@/components/Icon.astro";
 
 interface Props {
   heading?: "h2" | "h3";
@@ -18,7 +18,10 @@ interface Props {
 const { post, heading: Heading = "h2" } = Astro.props;
 ---
 
-<a href={post.href} class="grid gap-4">
+<a
+  href={post.href}
+  class="grid h-full grid-rows-[auto_1fr] gap-4 rounded focus:outline-hidden focus-visible:ring-2 ring-offset-2 ring-gray-500/40 transition"
+>
   {post.meta.thumbnail ? (
     <img
       src={post.meta.thumbnail}
@@ -27,7 +30,7 @@ const { post, heading: Heading = "h2" } = Astro.props;
     />
   ) : (
     <div class="grid place-items-center aspect-3/2 text-8xl rounded bg-gray-100 text-gray-300">
-      <DoubleSlash />
+      <Icon icon="brw" class="fill-current inline-block size-[1em]" />
     </div>
   )}
   <div class="mb-8">

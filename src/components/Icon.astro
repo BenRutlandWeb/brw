@@ -1,14 +1,13 @@
 ---
-import iconsUrl from "@/assets/icons.svg?url";
+import { getIcon, type IconName } from "@/lib/icons";
 
 interface Props {
-  icon: string;
+  icon: IconName;
   class?: string;
 }
 
 const { icon, class: className = "fill-current inline-block w-6 h-6" } = Astro.props;
+const { viewBox, inner } = getIcon(icon);
 ---
 
-<svg class={className} aria-hidden="true">
-  <use href={`${iconsUrl}#${icon}`}></use>
-</svg>
+<svg class={className} viewBox={viewBox} fill="currentColor" aria-hidden="true" set:html={inner} />

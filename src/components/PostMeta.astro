@@ -1,6 +1,6 @@
 ---
 import { humanDiff } from "@/helpers/time.js";
-import DoubleSlash from "@/components/DoubleSlash.astro";
+import Icon from "@/components/Icon.astro";
 
 interface Props {
   post: {
@@ -15,8 +15,8 @@ const { post } = Astro.props;
 const createdDate = humanDiff(new Date(post.meta.createdAt));
 ---
 
-<div class="flex flex-wrap gap-x-4 gap-y-1 text-sm font-mono text-gray-600">
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-mono text-gray-600">
   <time>Posted {createdDate} ago</time>
-  <span class="opacity-40"><DoubleSlash /></span>
+  <Icon icon="brw" class="fill-current inline-block size-[1em] opacity-40" />
   <span>{post.meta.stats.text}</span>
 </div>

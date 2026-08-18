@@ -4,6 +4,7 @@
 @theme {
   --color-brand-green: #12be88;
   --color-brand-blue: #111827;
+  --color-brand-pink: #e84a7f;
   --font-sans: var(--font-inter);
   --font-mono: var(--font-roboto-mono);
 }
@@ -74,6 +75,46 @@
   content: none;
 }
 
+.code-block {
+  position: relative;
+}
+
+.markdown-body .code-block {
+  margin-block: 1.7142857em;
+}
+
+.markdown-body .code-block > pre {
+  margin-block: 0;
+}
+
+.code-copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.4;
+}
+
+.code-copy:hover,
+.code-copy:focus-visible,
+.code-copy.is-copied {
+  opacity: 1;
+}
+
+.code-copy [data-copy-done] {
+  display: none;
+}
+
+.code-copy.is-copied [data-copy-idle] {
+  display: none;
+}
+
+.code-copy.is-copied [data-copy-done] {
+  display: block;
+}
+
 .text-lead,
 .markdown-body .text-lead,
 .prose .text-lead {
@@ -88,6 +129,11 @@
   line-height: inherit;
   font-weight: inherit;
   margin: 0;
+}
+
+.markdown-body a,
+.external-link {
+  @apply rounded-sm focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-solid outline-brand-pink;
 }
 
 .header-anchor {

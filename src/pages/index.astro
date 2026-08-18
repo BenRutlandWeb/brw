@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Button from "@/components/Button.astro";
-import DoubleSlash from "@/components/DoubleSlash.astro";
+import Icon from "@/components/Icon.astro";
 import PostCard from "@/components/PostCard.astro";
 import { getSortedPosts } from "@/lib/posts";
 
@@ -35,15 +35,16 @@ const posts = (await getSortedPosts()).slice(0, 3);
     <div class="border-b container content-screen">
       <div class="content-wide flex flex-wrap gap-4 justify-between items-center pb-4">
         <h2 class="text-4xl">Posts</h2>
-        <Button href="/posts" class="bg-brand-green ring-brand-green/40 text-brand-blue">
-          <DoubleSlash /> View all posts
+        <Button href="/posts" class="bg-brand-green text-brand-blue">
+          <Icon slot="before" icon="brw" class="fill-current inline-block size-[1.5rem]" />
+          View all posts
         </Button>
       </div>
     </div>
 
     <ul class="content-wide grid sm:grid-cols-2 md:grid-cols-3 gap-8">
       {posts.map((post) => (
-        <li>
+        <li class="h-full">
           <PostCard post={post} heading="h3" />
         </li>
       ))}
